@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mia for VP · QR sheet</title>
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="../css/mia-for-vp.css">
+<style>
+  body { background: var(--mv-field-tint); margin: 0; padding: var(--mv-space-2xl) var(--mv-gutter); }
+  .sheet { max-width: 900px; margin: 0 auto; }
+  .note { max-width: 62ch; margin-bottom: var(--mv-space-2xl); }
+
+  /* A door or hallway poster. The QR is 60mm so it scans from ~2 metres. */
+  .qr-poster { background: var(--mv-card-light); border: 1px solid var(--mv-line-light); border-radius: var(--mv-radius-default);
+    padding: var(--mv-space-2xl); text-align: center; max-width: 420px; margin: 0 auto var(--mv-space-2xl); }
+  .qr-poster .mv-logo { display: block; font: var(--mv-fw-h2) var(--mv-fs-h2)/1 var(--mv-font-head);
+    color: var(--mv-title-on-light); text-decoration: none; margin-bottom: var(--mv-space-lg); }
+  .qr-poster img { display: block; width: 60mm; height: 60mm; margin: 0 auto var(--mv-space-md); }
+  .qr-poster .url { font-family: var(--mv-font-mono); font-size: var(--mv-fs-small); color: var(--mv-link);
+    word-break: break-all; }
+  .qr-poster .school { font-family: var(--mv-font-head); font-size: var(--mv-fs-caption); font-weight: var(--mv-fw-h3);
+    color: var(--mv-body-on-light); margin-top: var(--mv-space-sm); }
+
+  /* Cut-outs for lockers and lunch tables. 30mm scans from arm's length. */
+  .qr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--mv-space-md); }
+  .qr-chip { background: var(--mv-card-light); border: 1px dashed var(--mv-line-light); border-radius: var(--mv-radius-sm);
+    padding: var(--mv-space-md); text-align: center; }
+  .qr-chip img { display: block; width: 30mm; height: 30mm; margin: 0 auto var(--mv-space-xs); }
+  .qr-chip .name { font-family: var(--mv-font-head); font-size: var(--mv-fs-caption); font-weight: var(--mv-fw-h3);
+    color: var(--mv-title-on-light); }
+  .qr-chip .url { font-family: var(--mv-font-mono); font-size: 10px; color: var(--mv-body-on-light); word-break: break-all; }
+
+  @media print {
+    body { background: var(--mv-white); padding: 12mm; }
+    .note, .no-print { display: none; }
+    .qr-poster { border-color: var(--mv-gray-2); page-break-after: always; margin-inline: 0; }
+    .qr-chip { border-color: var(--mv-gray-3); }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="note no-print">
+    <h1 class="mv-h2">QR sheet</h1>
+    <p class="mv-body">Everything here points at <strong>https://mia-for-vp.vercel.app</strong>. Print this page
+      to PDF and the poster lands on its own sheet, with the cut-outs after it. The codes are error-correction
+      level H, so a scuff or a thumb over one corner still scans.</p>
+    <p class="mv-body"><strong>Sizes are deliberate:</strong> the poster code is 60mm, which scans from roughly two
+      metres; the cut-outs are 30mm, for arm's length. Below about 25mm on paper it stops being reliable.</p>
+    <p class="mv-body">Raw files, if you want them in Canva or a slide instead:
+      <code>brand/assets/qr/mia-qr.svg</code> (vector, any size),
+      <code>mia-qr.png</code> (1640px), <code>mia-qr-on-shell.svg</code> (for a non-white background).</p>
+  </div>
+
+  <div class="qr-poster">
+    <span class="mv-logo">Mia for <span class="mv-mark mv-mark--text">VP</span></span>
+    <img src="../assets/qr/mia-qr.svg" alt="QR code linking to mia-for-vp.vercel.app">
+    <p class="url">mia-for-vp.vercel.app</p>
+    <p class="school">Calvary Chapel Academy</p>
+  </div>
+
+  <div class="qr-grid">
+    <div class="qr-chip">
+      <img src="../assets/qr/mia-qr.svg" alt="QR code linking to mia-for-vp.vercel.app">
+      <p class="name">Mia for VP</p>
+      <p class="url">mia-for-vp.vercel.app</p>
+    </div>
+    <div class="qr-chip">
+      <img src="../assets/qr/mia-qr.svg" alt="QR code linking to mia-for-vp.vercel.app">
+      <p class="name">Mia for VP</p>
+      <p class="url">mia-for-vp.vercel.app</p>
+    </div>
+    <div class="qr-chip">
+      <img src="../assets/qr/mia-qr.svg" alt="QR code linking to mia-for-vp.vercel.app">
+      <p class="name">Mia for VP</p>
+      <p class="url">mia-for-vp.vercel.app</p>
+    </div>
+    <div class="qr-chip">
+      <img src="../assets/qr/mia-qr.svg" alt="QR code linking to mia-for-vp.vercel.app">
+      <p class="name">Mia for VP</p>
+      <p class="url">mia-for-vp.vercel.app</p>
+    </div>
+    <div class="qr-chip">
+      <img src="../assets/qr/mia-qr.svg" alt="QR code linking to mia-for-vp.vercel.app">
+      <p class="name">Mia for VP</p>
+      <p class="url">mia-for-vp.vercel.app</p>
+    </div>
+    <div class="qr-chip">
+      <img src="../assets/qr/mia-qr.svg" alt="QR code linking to mia-for-vp.vercel.app">
+      <p class="name">Mia for VP</p>
+      <p class="url">mia-for-vp.vercel.app</p>
+    </div>
+    <div class="qr-chip">
+      <img src="../assets/qr/mia-qr.svg" alt="QR code linking to mia-for-vp.vercel.app">
+      <p class="name">Mia for VP</p>
+      <p class="url">mia-for-vp.vercel.app</p>
+    </div>
+    <div class="qr-chip">
+      <img src="../assets/qr/mia-qr.svg" alt="QR code linking to mia-for-vp.vercel.app">
+      <p class="name">Mia for VP</p>
+      <p class="url">mia-for-vp.vercel.app</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

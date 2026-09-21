@@ -395,6 +395,9 @@ field behind body copy · introduce a second accent hue "for variety" · reach f
 Generated with `python3 scripts/contrast.py brand/` on 2026-09-20. The script pairs every text role
 against every field, including combinations this brand never produces (a link inside the footer's
 panel fill, say). The rows below are the pairs that **can** occur:
+Mid-rose is a brand tone rather than a field role, so `contrast.py` does not pair it; the three nav
+rows were measured by hand on 2026-09-21. The two failing pairs are listed **because they are the
+ones the nav must avoid** — they are why its ink is plum.
 
 | Text | on Field | Ratio | AA normal (4.5) | AA large (3.0) |
 |---|---|---|---|---|
@@ -402,6 +405,9 @@ panel fill, say). The rows below are the pairs that **can** occur:
 | title-on-light `#3B1D2B` | white `#FFFFFF` | 15.04 | Pass | Pass |
 | title-on-light `#3B1D2B` | field-light `#FFF9FB` | 14.46 | Pass | Pass |
 | title-on-light `#3B1D2B` | field-tint `#FBE7F0` | 12.74 | Pass | Pass |
+| title-on-light `#3B1D2B` | mid-rose `#E58CAF` (nav bar) | 6.23 | Pass | Pass |
+| body-on-light `#6B4A58` | mid-rose `#E58CAF` (nav bar) | 3.17 | **Fail** | Pass |
+| link `#992D56` | mid-rose `#E58CAF` (nav bar) | 3.04 | **Fail** | Pass |
 | title-on-light `#3B1D2B` | gray-2 `#EBD3DE` | 10.67 | Pass | Pass |
 | link-on-dark `#F3C6DA` | field-dark `#3B1D2B` | 9.95 | Pass | Pass |
 | title-on-light `#3B1D2B` | petal `#F3C6DA` | 9.95 | Pass | Pass |
@@ -627,17 +633,17 @@ A petal mark on **one word per headline**.
 | Variant | Treatment | Text | Use |
 |---|---|---|---|
 | `.mv-mark` | `petal` underline, 0.14em thick, 0.08em offset, `skip-ink: none` | `title-on-light` | The default. One per headline. |
-| `.mv-mark--pill` | enclosed `petal` pill | `title-on-light` (9.95:1) | The wordmark only. A logo needs a shape; underlined text reads as a link. |
+| `.mv-mark--pill` | enclosed `petal` pill | `title-on-light` (9.95:1) | **Currently unused.** Held for a wordmark on a light field; the nav's field is mid-rose, where petal goes muddy. |
 | `.mv-mark--solid` | enclosed `primary` pill | `on-primary` (4.67:1) | A wordmark on a dark field. Never in the same view as `--pill`. |
-| `.mv-mark--text` | colour only | `link` (7.05:1) | One word inside running copy — her middle name in the hero sub. |
+| `.mv-mark--text` | colour only | `link` (7.05:1) | One word inside running copy — her middle name in the hero sub. In the nav it is overridden to `white`, which is how "VP" is set. |
 
 **Why the default is an underline.** The pill was the original signature and it cost two rounds of
 corrections: it sat inside the inline box, so a marked word starting a line was pushed right of the
-line above it, and its height crowded the descenders overhead. An underline cannot do either. Where
-the pill survives — the wordmark — it is drawn with `box-shadow`, never horizontal padding
-(`padding: 0.04em 0`, `box-shadow: ∓0.16em 0 0 petal`), for exactly that reason; **0.16em is the
-ceiling**, since the word space in Inter at 72px is 16px and a wider spread touches the preceding
-glyph. The nav wordmark widens to 0.3em, where there is no preceding word to touch.
+line above it, and its height crowded the descenders overhead. An underline cannot do either. The pill
+variant is still drawn with `box-shadow`, never horizontal padding (`padding: 0.04em 0`,
+`box-shadow: ∓0.16em 0 0 petal`), for exactly that reason; **0.16em is the ceiling**, since the word
+space in Inter at 72px is 16px and a wider spread touches the preceding glyph. Nothing uses it at
+present: the wordmark was its last home, and the nav's move to a mid-rose field took it.
 
 `text-decoration-skip-ink: none` is deliberate — the rule runs through descenders rather than
 breaking around them, which is what makes it read as a mark instead of a link.
@@ -648,10 +654,20 @@ wordmark. `h2` runs at 1.25 leading to give a marked line room.
 
 ### Nav — `.mv-nav`
 
-Sticky, 72px tall (56px below 820px, where the button grows to the 44px thumb target), shell field,
-1px `line-light` bottom border, wordmark left, links + one button right. Links are `small` at weight 700 in `body-on-light`, hover `link`, and the current page gets
-`aria-current` (2px underline at `link`, 6px offset). **Below 820px every link except the button
-hides** — the sticky bar carries the ask instead. Focus ring: 2px `focus`, 4px offset.
+Sticky, 72px tall (56px below 820px, where the button grows to the 44px thumb target), **mid-rose
+field**, 1px `plum-20` bottom border, wordmark left, links + one button right.
+
+The bar is the one place mid-rose is used as a field, and the ink on it is **plum, not
+`body-on-light`** — body-on-light measures 3.17:1 on mid-rose and fails AA, where plum is 6.23:1.
+Same reason the button is a plum outline rather than the usual `link`-coloured one: rose-deep on
+mid-rose is 3.04:1. Links are `small` at weight 600. **Hover adds a `plum-60` underline instead of
+recolouring the text**, so the ink never drops below its measured ratio in any state; `aria-current`
+is the same underline in full plum, 2px at 6px offset. The wordmark is **plum "Mia for" + white "VP"**, no enclosure. White measures 2.41:1 here, which
+the WCAG logotype exception allows and which nothing else on the bar depends on; every other piece
+of text is plum. A petal or blush field was rejected earlier for swallowing the pill, and the pill
+then went anyway.
+**Below 820px every link except the button hides** — the sticky bar carries the ask instead.
+Focus ring: 2px `plum`, 4px offset.
 
 ### Hero — `.mv-hero`
 
@@ -966,3 +982,6 @@ An agent about to ship a screen should be able to check it against this list alo
 | 2026-09-20 | Palette shifted pinker on request: cream/dusty-rose fields replaced by shell/blush/petal, accent and ink both replaced (old values now in the retired list). 20 hexes retired, including Calvary Chapel Academy's own blue and cream, which are retired deliberately. |
 | 2026-09-20 | Caveat (handwriting accent) parked rather than adopted; conditions for adopting it recorded in § Typography. |
 | 2026-09-20 | Phone pass. Tokens `nav-height-sm` (56px) and `bar-height` (60px) added; body pads under the sticky bar; `.mv-card--row` / `.mv-card--kv` phone rows; `.mv-two-col .mv-media` leads when stacked; display gets a 13vw phone clamp; headings `text-wrap: balance`; `.mv-snap` sections drop `scroll-margin-top` (it doubled the nav offset on anchor jumps); `.mv-md-hide` utility. |
+| 2026-09-21 | **Nav field changed shell → mid-rose.** Graydon pointed at the primary button and asked for the bar in that colour; rose measured 4.67:1 for white ink and only 3.09:1 for the petal hover, so the lighter tone he asked for next is the one that shipped. Petal and blush were both rejected on sight: the wordmark's petal pill vanishes into them. Nav ink is now plum throughout, and hover moves the colour into an underline rather than recolouring the text. |
+| 2026-09-21 | QR collateral added: `brand/assets/qr/` (SVG, SVG-on-shell, 1640px PNG) at error-correction level H, plus `brand/preview/qr.html`, a print-to-PDF sheet with a 60mm poster code and eight 30mm cut-outs. Decode-tested down to 150px; fails at 90px, which sets the print floor. |
+| 2026-09-21 | Wordmark de-enclosed: "VP" is now white ink on the mid-rose bar, no pill, chosen by Graydon from four drawn on the real bar (no mark / white pill / plum underline / white ink). `.mv-mark--pill` is now unused and held in the kit rather than cut. |

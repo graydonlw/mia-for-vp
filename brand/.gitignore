@@ -11,3 +11,8 @@ assets/*
 !assets/*.jpg
 !assets/*.png
 !assets/*.svg
+
+# The QR codes are generated, but they are campaign collateral that has to be
+# printable from a fresh clone. `assets/*` excludes this directory outright, so
+# the file negations above can never reach inside it — un-exclude the directory.
+!assets/qr/

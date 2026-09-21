@@ -19,9 +19,9 @@ code on.
 - [ ] **The three promises.** Specific and checkable, in her words. "A vending
       machine in the north hall by November" beats "more school spirit." Goes in
       `#platform`.
-- [ ] **A photo.** Headshot, roughly 4:5 portrait crop. Drop it in
-      `brand/assets/`, put an `<img>` inside the `.mv-photo` div in `#about`,
-      and add an `og:image` meta tag so link previews aren't blank.
+- [x] ~~**A photo.**~~ Done 2026-09-21 — three supplied and wired in: the hero
+      arch, the About arch, and the round portrait in the vote CTA. `og:image`
+      is set, so link previews are no longer blank.
 
 ## Needed, but the page survives without them
 
@@ -42,7 +42,13 @@ code on.
 - [ ] Delete every element with `class="todo"`. Those are the grey notes-to-self
       under each section.
 - [ ] Search the file for `[` and make sure no bracketed placeholder survived.
-- [ ] Scan the QR code on a real phone before printing any of them.
+- [ ] Scan the QR code on a real phone before printing any of them. The codes
+      live in `brand/assets/qr/` and the printable sheet is
+      `brand/preview/qr.html` — open it and print to PDF. It decodes in software
+      down to 150px, but a real camera is the only test that counts.
+- [ ] **Re-generate the QR codes if the URL ever changes.** They are pointed at
+      `https://mia-for-vp.vercel.app`. A custom domain, or anything else that
+      moves the site, makes every printed code dead paper.
 - [ ] Record the pass in `PROJECT_TRACKER.md` (§2, §6, §10, §11). The tracker is
       a symlink into the local vault and is gitignored, so it cannot be updated
       from the project thread — it has to happen on the machine that has it.
