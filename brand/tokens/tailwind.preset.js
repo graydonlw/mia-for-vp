@@ -10,7 +10,6 @@ module.exports = {
           'rose-deep': '#992D56',
           'mid-rose': '#E58CAF',
           'petal': '#F3C6DA',
-          'petal-light': '#FBEEF4',
           'blush': '#FBE7F0',
           'shell': '#FFF9FB',
           'white': '#FFFFFF',
