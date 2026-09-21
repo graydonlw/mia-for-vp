@@ -155,6 +155,8 @@ layout:
   gutter: 24px
   section-y: 96px
   nav-height: 72px
+  nav-height-sm: 56px
+  bar-height: 60px
   measure: 66ch
   breakpoints:
     sm: 640px
@@ -439,15 +441,17 @@ Inter is neutral and tight, which keeps a slogan at 72px from reading as a child
 Nunito's slightly rounded shapes put the friendliness back into anything you read at length; IBM
 Plex Mono's uppercase overlines give the soft page enough structure to look designed.
 
-**Weight policy: Inter at 700 for display/h1/h2 and 600 for h3–h5; Nunito at 400 for everything
-you read, with 700 reserved for buttons, badges, labels and nav links.** Hierarchy comes from size
+**Weight policy: Inter at 700 for display/h1/h2 and 600 for h3–h5, nav links, buttons and badges;
+Nunito at 400 for everything you read.** The split is by job, not by size: **Inter labels the
+interface, Nunito carries the prose.** Anything a person reads a sentence of is Nunito; anything
+that names a control or a status is Inter 600. Hierarchy comes from size
 and space, never from a heavier headline. Never mix weights inside one text block.
 
 ### The ramp
 
 | Style | Face | Size / line height | Tracking | Notes |
 |---|---|---|---|---|
-| display | Inter 700 | 72 / 1.10 | -0.022em | Hero only. `clamp(44px, 8vw, 72px)`; max 14ch. |
+| display | Inter 700 | 72 / 1.10 | -0.022em | Hero only. `clamp(44px, 8vw, 72px)`, and `clamp(44px, 13vw, 52px)` below 480px so a phone hero is not stuck at the floor; max 14ch. |
 | h1 | Inter 700 | 52 / 1.12 | -0.02em | Page titles. `clamp(36px, 6vw, 52px)`. |
 | h2 | Inter 700 | 40 / 1.15 | -0.018em | Section titles. `clamp(30px, 4.5vw, 40px)`. |
 | h3 | Inter 600 | 30 / 1.25 | — | Sub-sections, CTA headings. |
@@ -457,8 +461,8 @@ and space, never from a heavier headline. Never mix weights inside one text bloc
 | body | Nunito 400 | 18 / 1.65 | — | Max `66ch`. |
 | small | Nunito 400 | 16 / 1.60 | — | Card copy, table cells, nav links. |
 | caption | Nunito 400 | 15 / 1.50 | — | Help text, photo captions. |
-| button | Nunito 700 | 16 / 1.00 | 0.01em | Buttons and nav links. |
-| badge | Nunito 700 | 13 / 1.00 | 0.06em | Uppercase. Badges and pills. |
+| button | Inter 600 | 16 / 1.00 | 0.01em | Buttons and nav links. The `button` token still carries Nunito's 700 weight for non-UI uses; the components set Inter 600 explicitly. |
+| badge | Inter 600 | 13 / 1.00 | 0.06em | Uppercase. Badges and pills. |
 | overline | IBM Plex Mono 500 | 13 / 1.40 | 0.16em | Uppercase. Eyebrows, table headers. |
 | credit | IBM Plex Mono 500 | 13 / 1.40 | 0.08em | Uppercase. The footnote line, photo credits. |
 
@@ -525,14 +529,23 @@ white card grid to break it.
 | Container | 1120px |
 | Gutter | 24px (drops to 16px below 820px) |
 | Section padding (y) | 96px (`--mv-space-3xl`); 64px below 820px |
-| Nav height | 72px, sticky |
+| Nav height | 72px, sticky (`nav-height`); 56px below 820px (`nav-height-sm`) |
+| Sticky vote bar | 60px (`bar-height`) plus the safe-area inset, below 820px; the body gets the same bottom padding so nothing ends under it |
 | Body measure | 66ch |
 | Card grid | `repeat(auto-fit, minmax(min(280px, 100%), 1fr))`, 16px gap |
 | Two-column | `1fr 1fr`, 64px gap; collapses to one column at 820px |
 | Space scale | 8 · 12 · 16 · 24 · 40 · 64 · 96 |
 
-Breakpoints: **sm 640 · md 820 · lg 1024 · xl 1280.** Only `md` does real work: nav links hide, the
-two-column block stacks, the container loses padding, and the sticky vote bar appears.
+Breakpoints: **sm 640 · md 820 · lg 1024 · xl 1280.** `md` does most of the work: nav links hide and
+the nav drops to 56px, the two-column block stacks with its `.mv-media` cell first, the container
+loses padding, and the sticky vote bar appears. `sm` turns `.mv-card--row` / `.mv-card--kv` cards
+sideways and tightens the card grid and CTA padding.
+
+**Full-screen sections.** `.mv-snap` on `<html>` makes each top-level `<section>` at least one
+viewport tall (minus the nav, and minus the bar on a phone) and snaps to it with `proximity`, so a
+section that outgrows a phone screen scrolls instead of clipping. Only `scroll-padding-top` on the
+scroller offsets the nav — never `scroll-margin-top` on the sections as well, or anchor jumps land
+one nav-height low.
 
 No horizontal scroll at 320px. The display style is clamped and headline words are allowed to break
 (`overflow-wrap: anywhere`), because "Vice President" does not fit on a narrow phone otherwise.
@@ -619,8 +632,8 @@ mid-word; never on more than three words; never inside body copy.
 
 ### Nav — `.mv-nav`
 
-Sticky, 72px tall, shell field, 1px `line-light` bottom border, wordmark left, links + one button
-right. Links are `small` at weight 700 in `body-on-light`, hover `link`, and the current page gets
+Sticky, 72px tall (56px below 820px, where the button grows to the 44px thumb target), shell field,
+1px `line-light` bottom border, wordmark left, links + one button right. Links are `small` at weight 700 in `body-on-light`, hover `link`, and the current page gets
 `aria-current` (2px underline at `link`, 6px offset). **Below 820px every link except the button
 hides** — the sticky bar carries the ask instead. Focus ring: 2px `focus`, 4px offset.
 
@@ -681,6 +694,11 @@ it to `.mv-band-tint` puts a white tile on a white card, where it disappears.
 
 Cards look identical on both light bands by design. **Do not add a shadow to lift them.**
 
+**Phone rows.** Below 640px a stacked trio of cards runs past one screen, so two modifiers turn a
+card sideways there and do nothing above it: `.mv-card--row` keeps the icon tile on the left with
+title and copy beside it (the platform cards); `.mv-card--kv` makes the title a left-hand label
+beside its copy — "When", "Where", "Who can". Neither changes the card's fill or radius.
+
 ### Photo — `.mv-photo`
 
 | Variant | Shape | Ratio | Use |
@@ -733,8 +751,10 @@ the quote.
 `.mv-cta` is a blush band-within-a-band: heading, one line, one button, 24px radius. **On a blush
 band it becomes a white card** (`.mv-band-tint .mv-cta`), because blush on blush has no edge. `--solid`
 fills it rose with white text — **one per page, and never adjacent to a rose button**. Below 820px
-`.mv-sticky-cta` pins two buttons to the bottom edge with a safe-area inset. It is the only element
-in the kit with a shadow.
+`.mv-sticky-cta` pins up to three 44px buttons to the bottom edge (60px `bar-height` plus the
+safe-area inset) and the body takes matching bottom padding. The `sticky` shadow token is the bar's
+whole edge; it carries no border. It is the only element in the kit with a shadow. `.mv-md-hide`
+removes a control the bar already carries.
 
 ### Footer — `.mv-footer`
 
@@ -827,7 +847,7 @@ grid. Never a stock placeholder person; never a gray box.
 | Components | `brand/css/mia-for-vp.css` | Requires `tokens.css` first. |
 | Preview | `brand/preview/index.html` | Open in a browser; it is the visual test. |
 | Icons | `brand/icons/` | Currently empty — Lucide is used from source, nothing vendored yet. |
-| Photos | `brand/assets/` | Not yet supplied. Name them `mia-<context>-<n>.jpg`, keep under 400KB, export at 1600px on the long edge. |
+| Photos | `brand/assets/` | Three portraits supplied 2026-09-20, shot outdoors at golden hour. Served as **WebP** at two widths each (`mia-portrait-<n>-<width>.webp`) with `srcset`; largest on-page file 89KB. Sources were 942×1411, so 960px is the long edge, not the 1600px this row used to ask for — do not upscale. `mia-og.jpg` (1080px, 233KB) exists only for link previews, because scrapers are unreliable with WebP. |
 | Fonts | Google Fonts CDN | Self-host later by downloading the three families (all OFL) into `brand/assets/fonts/` and swapping `font.import`. |
 
 Permissions: photos of anyone but Mia need that person's OK before they go on a public site.
@@ -896,5 +916,8 @@ An agent about to ship a screen should be able to check it against this list alo
 | 2026-09-20 | Kit created. Direction B-Round chosen from three explored (Soft Glow, Petal Poster, Blush & School Blue) after a rounded-typeface study; Fredoka + Nunito + Space Mono; 43 colors, 14 type styles. |
 | 2026-09-20 | Type ramp lifted for a full-width page (body 16→18, small 14→16, caption 13→15, button 15→16, badge 12→13, overline 11→13, h1 46→52, h2 34→40, h3 26→30, h4 22→24, h5 19→22, lede 20→22; display unchanged at 72). Mono face changed Space Mono → IBM Plex Mono at 500, the face used in the approved B-Round mock. |
 | 2026-09-20 | Display face changed **Fredoka → Inter 700** (h3–h5 at 600), tracking tightened to -0.022em/-0.02em/-0.018em on display/h1/h2, display/h1 line-height opened 1.02→1.10 and 1.08→1.12 so Inter's descenders clear the petal pill on the line below, head fallback Trebuchet MS → Helvetica Neue. Graydon had approved the B-Round mock while its webfonts were failing to load, so the face he signed off on was the Helvetica fallback, not Fredoka. Colour, radii, shapes and the petal pill unchanged. |
+| 2026-09-20 | Three real photos of Mia wired in: hero arch (wide screens only), About arch, and a round portrait in the vote CTA. `.mv-hero-split` added for the hero's two-column layout; `.mv-photo img` now crops at `50% 25%` so a centred cover crop takes the feet rather than the head. |
+| 2026-09-20 | Nav links, buttons and badges moved from Nunito 700 to **Inter 600**. Graydon pointed at the nav, where Nunito links sat beside an Inter wordmark; the same split existed on every button. Nunito is now prose only. |
 | 2026-09-20 | Palette shifted pinker on request: cream/dusty-rose fields replaced by shell/blush/petal, accent and ink both replaced (old values now in the retired list). 20 hexes retired, including Calvary Chapel Academy's own blue and cream, which are retired deliberately. |
 | 2026-09-20 | Caveat (handwriting accent) parked rather than adopted; conditions for adopting it recorded in § Typography. |
+| 2026-09-20 | Phone pass. Tokens `nav-height-sm` (56px) and `bar-height` (60px) added; body pads under the sticky bar; `.mv-card--row` / `.mv-card--kv` phone rows; `.mv-two-col .mv-media` leads when stacked; display gets a 13vw phone clamp; headings `text-wrap: balance`; `.mv-snap` sections drop `scroll-margin-top` (it doubled the nav offset on anchor jumps); `.mv-md-hide` utility. |

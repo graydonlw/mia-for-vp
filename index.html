@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="mv-snap">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,18 +9,30 @@
 <meta property="og:title" content="Mia Webster for Vice President">
 <meta property="og:description" content="Senior. Volleyball captain. Future teacher. Lead with Grace.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://voteformia.vercel.app/">
-<link rel="canonical" href="https://voteformia.vercel.app/">
-<!-- TODO og:image: add once a photo exists -->
+<meta property="og:url" content="https://mia-for-vp.vercel.app/">
+<link rel="canonical" href="https://mia-for-vp.vercel.app/">
+<meta property="og:image" content="https://mia-for-vp.vercel.app/brand/assets/mia-og.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1618">
+<meta property="og:image:alt" content="Mia Webster, senior at Calvary Chapel Academy">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="brand/tokens/tokens.css">
 <link rel="stylesheet" href="brand/css/mia-for-vp.css">
 <style>
-  section{scroll-margin-top:var(--mv-nav-height)}
   .todo{color:var(--mv-muted);font-size:var(--mv-fs-caption)}
   [hidden]{display:none !important}
+  /* The draft banner is temporary: one flat strip, one line where it fits, gone when the copy is in. */
+  #draft-banner{border-radius:0;max-width:none;justify-content:center;padding:var(--mv-space-sm) var(--mv-space-md);font-size:var(--mv-fs-caption);line-height:var(--mv-lh-caption)}
+  #draft-banner{align-items:center}
+  #draft-banner b{display:inline;margin:0 var(--mv-space-xs) 0 0}
+  /* Page composition: the About portrait is 320 wide beside the text, 220 above it on a phone. */
+  #about .mv-photo-frame{width:min(320px,100%)}
+  #vote .mv-cta{margin-top:var(--mv-space-xl)}
+  @media (max-width:820px){ #about .mv-photo-frame{width:min(220px,100%)} }
+  @media (max-width:640px){ #vote .mv-cta{margin-top:var(--mv-space-lg)} }
 </style>
 </head>
 <body>
@@ -34,9 +46,9 @@
      Placeholder copy is marked [in brackets] or with a .todo caption.
      ============================================================ -->
 
-<div id="draft-banner" class="mv-alert mv-alert--warning" style="border-radius:0;max-width:none">
+<div id="draft-banner" class="mv-alert mv-alert--warning">
   <svg class="mv-icon mv-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3zM12 10v4M12 17h.01"/></svg>
-  <div><b>Draft</b>Placeholder copy in places. Not ready to share yet.</div>
+  <div><b>Draft.</b>Placeholder copy in places. Not ready to share yet.</div>
 </div>
 
 <nav class="mv-nav">
@@ -53,17 +65,29 @@
 <section class="mv-hero mv-has-blobs" id="top">
   <div class="mv-blob" aria-hidden="true" style="width:380px;height:380px;left:-140px;bottom:-180px"></div>
   <div class="mv-blob" aria-hidden="true" style="width:90px;height:90px;right:18%;top:12%"></div>
-  <div class="mv-inner">
+  <div class="mv-inner mv-hero-split">
+   <div>
     <div class="mv-row" style="gap:var(--mv-space-xs)">
-      <p class="mv-badge">Vice President · Calvary Chapel Academy</p>
+      <p class="mv-badge">Running for Vice President<span class="mv-sm-hide"> · Calvary Chapel Academy</span><span class="mv-sm-only"> · CCA</span></p>
       <p class="mv-badge mv-badge--solid" id="countdown" hidden></p>
     </div>
-    <h1 class="mv-display" style="margin-top:var(--mv-space-md)">Lead with <span class="mv-mark">Grace</span></h1>
+    <h1 class="mv-display" style="margin-top:var(--mv-space-xl)">Lead with <span class="mv-mark">Grace</span></h1>
     <p class="mv-sub">Mia Webster, senior. Volleyball captain, future teacher, and someone who actually answers when you ask her for something.</p>
     <div class="mv-btns">
       <a class="mv-btn mv-btn--primary" href="#platform">See the platform</a>
       <a class="mv-btn mv-btn--secondary" href="#vote">How to vote</a>
     </div>
+   </div>
+   <div class="mv-media mv-md-hide">
+    <div class="mv-photo-frame" style="width:min(340px,100%)">
+      <div class="mv-photo">
+        <img src="brand/assets/mia-portrait-1-480.webp"
+             srcset="brand/assets/mia-portrait-1-480.webp 480w, brand/assets/mia-portrait-1-960.webp 960w"
+             sizes="(max-width: 820px) 1px, 340px" width="480" height="719" decoding="async"
+             alt="Mia Webster, smiling, outdoors at sunset">
+      </div>
+    </div>
+   </div>
   </div>
 </section>
 
@@ -72,21 +96,21 @@
   <div class="mv-container">
     <p class="mv-overline">The platform</p>
     <h2>Three things, and she will tell you how they went.</h2>
-    <div class="mv-card-grid" style="margin-top:var(--mv-space-xl)">
+    <div class="mv-card-grid">
 
-      <div class="mv-card">
+      <div class="mv-card mv-card--row">
         <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
         <div class="mv-card-title">[Promise one]</div>
         <p>[One sentence on what she will actually do, specific enough that you could check at the end of the year whether it happened.]</p>
       </div>
 
-      <div class="mv-card">
+      <div class="mv-card mv-card--row">
         <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
         <div class="mv-card-title">[Promise two]</div>
         <p>[Same again. Name the thing, name when it happens.]</p>
       </div>
 
-      <div class="mv-card">
+      <div class="mv-card mv-card--row">
         <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
         <div class="mv-card-title">[Promise three]</div>
         <p>[Same again.]</p>
@@ -98,7 +122,7 @@
 </section>
 
 <!-- ---------- About ---------- -->
-<section class="mv-band-tint" id="about">
+<section class="mv-band-light" id="about">
   <div class="mv-container">
     <div class="mv-two-col">
       <div class="mv-stack">
@@ -112,10 +136,15 @@
           <a class="mv-btn mv-btn--ghost" id="ig-link" href="#" hidden target="_blank" rel="noopener">Follow the campaign <span class="mv-arrow">→</span></a>
         </div>
       </div>
-      <div style="display:flex;justify-content:center">
-        <div class="mv-photo-frame" style="width:min(320px,100%)">
-          <!-- TODO: put <img src="brand/assets/mia-portrait.jpg" alt="Mia Webster"> inside .mv-photo -->
-          <div class="mv-photo"></div>
+      <div class="mv-media">
+        <div class="mv-photo-frame">
+          <div class="mv-photo">
+            <img src="brand/assets/mia-portrait-2-480.webp"
+                 srcset="brand/assets/mia-portrait-2-480.webp 480w, brand/assets/mia-portrait-2-960.webp 960w"
+                 sizes="(max-width: 820px) 220px, 320px" width="480" height="719"
+                 loading="lazy" decoding="async"
+                 alt="Mia Webster sitting outdoors, looking at the camera">
+          </div>
           <span class="mv-badge mv-badge--solid">Mia</span>
         </div>
       </div>
@@ -124,30 +153,36 @@
 </section>
 
 <!-- ---------- How to vote ---------- -->
-<section class="mv-band-light" id="vote">
+<section class="mv-band-tint" id="vote">
   <div class="mv-container">
     <p class="mv-overline">How to vote</p>
     <h2>It takes about a <span class="mv-mark">minute</span></h2>
-    <div class="mv-card-grid" style="margin-top:var(--mv-space-xl)">
-      <div class="mv-card">
+    <div class="mv-card-grid">
+      <div class="mv-card mv-card--kv">
         <div class="mv-card-title">When</div>
         <p><b class="js-date">[election day]</b>. [Add the time or the period it happens during.]</p>
       </div>
-      <div class="mv-card">
+      <div class="mv-card mv-card--kv">
         <div class="mv-card-title">Where</div>
         <p>At school. [Add the actual room, or the period, or how the ballot reaches you.]</p>
       </div>
-      <div class="mv-card">
+      <div class="mv-card mv-card--kv">
         <div class="mv-card-title">Who can</div>
         <p>[Which grades vote. Whether you need anything with you.]</p>
       </div>
     </div>
-    <div class="mv-cta mv-cta--solid" style="margin-top:var(--mv-space-xl)">
+    <div class="mv-cta mv-cta--solid">
+      <div class="mv-photo mv-photo--round">
+        <img src="brand/assets/mia-portrait-3-320.webp"
+             srcset="brand/assets/mia-portrait-3-320.webp 320w, brand/assets/mia-portrait-3-640.webp 640w"
+             sizes="(max-width: 640px) 64px, 88px" width="320" height="479"
+             loading="lazy" decoding="async" alt="">
+      </div>
       <div>
         <h3>Vote Mia on <span class="js-date">[election day]</span>.</h3>
         <p class="mv-body" style="margin-top:var(--mv-space-xs);color:var(--mv-on-primary)">Put it in your phone now so you don't forget.</p>
       </div>
-      <a class="mv-btn mv-btn--secondary" href="#top">Mia for VP</a>
+      <a class="mv-btn mv-btn--secondary mv-md-hide" href="#top">Mia for VP</a>
     </div>
     <p class="todo" style="margin-top:var(--mv-space-lg)">Set ELECTION_DATE at the bottom of this file and the date fills in everywhere.</p>
   </div>
@@ -158,7 +193,7 @@
     <p class="mv-h4">Mia for <span class="mv-mark">VP</span></p>
     <p class="mv-h5" style="margin-top:var(--mv-space-sm);color:var(--mv-title-on-dark)">Vote <span class="js-date">[election day]</span>, at school.</p>
     <div class="mv-row" style="margin-top:var(--mv-space-lg)">
-      <a class="mv-btn mv-btn--primary" href="#vote">How to vote</a>
+      <a class="mv-btn mv-btn--primary mv-md-hide" href="#vote">How to vote</a>
       <a class="mv-btn mv-btn--secondary" id="ig-link-footer" href="#" hidden target="_blank" rel="noopener">Instagram</a>
     </div>
     <div class="mv-footnote">
@@ -168,10 +203,11 @@
   </div>
 </footer>
 
-<div class="mv-sticky-cta">
+<nav class="mv-sticky-cta" aria-label="Sections">
   <a class="mv-btn mv-btn--secondary" href="#platform">Platform</a>
-  <a class="mv-btn mv-btn--primary" href="#vote">How to vote</a>
-</div>
+  <a class="mv-btn mv-btn--secondary" href="#about">About</a>
+  <a class="mv-btn mv-btn--primary" href="#vote">Vote</a>
+</nav>
 
 <script>
 /* ======================================================================

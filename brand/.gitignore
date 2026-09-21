@@ -2,6 +2,12 @@
 node_modules/
 
 # Fetched or generated binary payload is re-creatable; keep manifests, drop the files.
+# Photographs are the exception: the web-sized derivatives here are the only copies
+# in the repo, the originals live outside it, and the site 404s its own images without them.
 assets/*
 !assets/*.json
 !assets/*.md
+!assets/*.webp
+!assets/*.jpg
+!assets/*.png
+!assets/*.svg

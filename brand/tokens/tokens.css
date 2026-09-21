@@ -106,6 +106,8 @@
   --mv-gutter: 24px;
   --mv-section-y: 96px;
   --mv-nav-height: 72px;
+  --mv-nav-height-sm: 56px;
+  --mv-bar-height: 60px;
   --mv-measure: 66ch;
   /* breakpoints: sm 640px, md 820px, lg 1024px, xl 1280px */
 }

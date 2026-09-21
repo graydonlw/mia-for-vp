@@ -155,6 +155,8 @@ layout:
   gutter: 24px
   section-y: 96px
   nav-height: 72px
+  nav-height-sm: 56px
+  bar-height: 60px
   measure: 66ch
   breakpoints:
     sm: 640px
