@@ -2,8 +2,8 @@
 version: 0.1
 name: Mia for VP
 prefix: mv
-description: "Pink-white and blush fields, one true-pink accent that carries every interactive job, Fredoka headlines and Nunito body, 24px card corners with fully round buttons and badges, and one signature detail: the petal pill that sits behind a single word per headline."
-source: "Interview with Graydon on 2026-09-20 (personality: warm, optimistic, confident; register: light-first; direction B-Round, Fredoka). Calvary Chapel Academy's own colours were read live from ccobacademy.com and deliberately not used; both sit in color.retired. Mia's last name, election date, platform copy and photos are not yet supplied."
+description: "Pink-white and blush fields, one true-pink accent that carries every interactive job, Inter headlines and Nunito body, 24px card corners with fully round buttons and badges, and one signature detail: the petal pill that sits behind a single word per headline."
+source: "Interview with Graydon on 2026-09-20 (personality: warm, optimistic, confident; register: light-first; direction B-Round; display face changed Fredoka \u2192 Inter on 2026-09-20). Calvary Chapel Academy's own colours were read live from ccobacademy.com and deliberately not used; both sit in color.retired. Mia's last name, election date, platform copy and photos are not yet supplied."
 colors:
   plum: "#3B1D2B"
   rose: "#BE4C78"
@@ -50,87 +50,87 @@ colors:
   skeleton-shine: rgba(255,255,255,.65)
 retired-colors: ["#0000B6", "#1E2A8A", "#2E1F26", "#2F7D5E", "#3D2B33", "#7A3550", "#856573", "#8E2F55", "#9A6B14", "#A63E67", "#A8536E", "#B33A3A", "#C2537E", "#D28FA6", "#E07A9E", "#E3C7D3", "#E9C4CF", "#F6E7E9", "#F7F6F2", "#FBF6F3"]
 fonts:
-  head: Fredoka
+  head: Inter
   body: Nunito
-  mono: Space Mono
+  mono: IBM Plex Mono
 typography:
   display:
     font: head
     size: 72px
-    weight: 600
-    lineHeight: 1.02
-    letterSpacing: -0.015em
+    weight: 700
+    lineHeight: 1.1
+    letterSpacing: -0.022em
   h1:
     font: head
-    size: 46px
-    weight: 600
-    lineHeight: 1.08
-    letterSpacing: -0.01em
+    size: 52px
+    weight: 700
+    lineHeight: 1.12
+    letterSpacing: -0.02em
   h2:
     font: head
-    size: 34px
-    weight: 600
+    size: 40px
+    weight: 700
     lineHeight: 1.15
-    letterSpacing: -0.01em
+    letterSpacing: -0.018em
   h3:
     font: head
-    size: 26px
-    weight: 500
+    size: 30px
+    weight: 600
     lineHeight: 1.25
   h4:
     font: head
-    size: 22px
-    weight: 500
+    size: 24px
+    weight: 600
     lineHeight: 1.3
   h5:
     font: head
-    size: 19px
-    weight: 500
+    size: 22px
+    weight: 600
     lineHeight: 1.35
   lede:
     font: body
-    size: 20px
+    size: 22px
     weight: 400
     lineHeight: 1.6
   body:
     font: body
-    size: 16px
+    size: 18px
     weight: 400
     lineHeight: 1.65
   small:
     font: body
-    size: 14px
+    size: 16px
     weight: 400
     lineHeight: 1.6
   caption:
     font: body
-    size: 13px
+    size: 15px
     weight: 400
     lineHeight: 1.5
   button:
     font: body
-    size: 15px
+    size: 16px
     weight: 700
     lineHeight: 1.0
     letterSpacing: 0.01em
   badge:
     font: body
-    size: 12px
+    size: 13px
     weight: 700
     lineHeight: 1.0
     letterSpacing: 0.06em
     transform: uppercase
   overline:
     font: mono
-    size: 11px
-    weight: 400
+    size: 13px
+    weight: 500
     lineHeight: 1.4
     letterSpacing: 0.16em
     transform: uppercase
   credit:
     font: mono
-    size: 12px
-    weight: 400
+    size: 13px
+    weight: 500
     lineHeight: 1.4
     letterSpacing: 0.08em
     transform: uppercase
@@ -277,18 +277,18 @@ answer for a two-week campaign: nothing to commission, nothing to license, and i
 
 | Version | Use | Spec |
 |---|---|---|
-| Primary wordmark | Nav, footer, anywhere the campaign signs its name | "Mia for VP" — Fredoka 600, `--mv-fs-h4` (22px), `--mv-title-on-light`, tracking `-0.005em` |
+| Primary wordmark | Nav, footer, anywhere the campaign signs its name | "Mia for VP" — Inter 600, `--mv-fs-h4` (24px), `--mv-title-on-light`, tracking `-0.005em` |
 | Marked wordmark | One per page maximum, usually the footer | "Mia for **VP**" with `.mv-mark` on "VP" |
-| Short form | Favicon, sticker, profile picture | "M" in Fredoka 600, white on `--mv-primary`, in a `--mv-radius-tile` circle |
+| Short form | Favicon, sticker, profile picture | "M" in Inter 600, white on `--mv-primary`, in a `--mv-radius-tile` circle |
 
-- **Clear space:** one cap-height of Fredoka on every side. In the nav that is the `--mv-space-md`
+- **Clear space:** one cap-height of Inter on every side. In the nav that is the `--mv-space-md`
   gap already in the CSS.
 - **Minimum size:** 18px type height for the wordmark; 28px square for the short form. Below that
-  Fredoka's round terminals fill in.
+  Inter's tight sidebearings close up.
 - **On color:** on shell, blush or white → `title-on-light`. On plum → `title-on-dark`. On rose →
   `on-primary`. Never rose type on blush: 6.21:1 passes, but it makes the wordmark look like a link.
 
-**Don't:** stretch, rotate or outline it · set it in any face but Fredoka · put it on a photo
+**Don't:** stretch, rotate or outline it · set it in any face but Inter · put it on a photo
 without a solid field behind it · add a tagline lockup (the tagline is undecided) · use the
 school's crest or name-mark anywhere — this is Mia's campaign, not a school publication.
 
@@ -432,12 +432,14 @@ Takeaways an agent should carry:
 
 ## Typography
 
-**Fredoka does the headlines, Nunito does everything you actually read, and Space Mono does the
-small structural labels.** Fredoka's rounded terminals are the type half of the one idea; Nunito's
-slightly rounded shapes match it without getting in the way of a paragraph; Space Mono's uppercase
-overlines give the soft page enough structure to look designed rather than merely pleasant.
+**Inter does the headlines, Nunito does everything you actually read, and IBM Plex Mono does the
+small structural labels.** The warmth in this brand comes from colour and shape — the pink, the 24px
+corners, the fully round buttons, the petal pill — so the letterforms do not have to carry it too.
+Inter is neutral and tight, which keeps a slogan at 72px from reading as a children's poster;
+Nunito's slightly rounded shapes put the friendliness back into anything you read at length; IBM
+Plex Mono's uppercase overlines give the soft page enough structure to look designed.
 
-**Weight policy: Fredoka at 600 for display/h1/h2 and 500 for h3–h5; Nunito at 400 for everything
+**Weight policy: Inter at 700 for display/h1/h2 and 600 for h3–h5; Nunito at 400 for everything
 you read, with 700 reserved for buttons, badges, labels and nav links.** Hierarchy comes from size
 and space, never from a heavier headline. Never mix weights inside one text block.
 
@@ -445,38 +447,39 @@ and space, never from a heavier headline. Never mix weights inside one text bloc
 
 | Style | Face | Size / line height | Tracking | Notes |
 |---|---|---|---|---|
-| display | Fredoka 600 | 72 / 1.02 | -0.015em | Hero only. `clamp(40px, 8vw, 72px)`; max 14ch. |
-| h1 | Fredoka 600 | 46 / 1.08 | -0.01em | Page titles. `clamp(32px, 6vw, 46px)`. |
-| h2 | Fredoka 600 | 34 / 1.15 | -0.01em | Section titles. `clamp(26px, 4.5vw, 34px)`. |
-| h3 | Fredoka 500 | 26 / 1.25 | — | Sub-sections, CTA headings. |
-| h4 | Fredoka 500 | 22 / 1.30 | — | The wordmark size. |
-| h5 | Fredoka 500 | 19 / 1.35 | — | Card titles. |
-| lede | Nunito 400 | 20 / 1.60 | — | Hero subtitle and intros. Max 40ch. |
-| body | Nunito 400 | 16 / 1.65 | — | Max `66ch`. |
-| small | Nunito 400 | 14 / 1.60 | — | Card copy, table cells, nav links. |
-| caption | Nunito 400 | 13 / 1.50 | — | Help text, photo captions. |
-| button | Nunito 700 | 15 / 1.00 | 0.01em | Buttons and nav links. |
-| badge | Nunito 700 | 12 / 1.00 | 0.06em | Uppercase. Badges and pills. |
-| overline | Space Mono 400 | 11 / 1.40 | 0.16em | Uppercase. Eyebrows, table headers. |
-| credit | Space Mono 400 | 12 / 1.40 | 0.08em | Uppercase. The footnote line, photo credits. |
+| display | Inter 700 | 72 / 1.10 | -0.022em | Hero only. `clamp(44px, 8vw, 72px)`; max 14ch. |
+| h1 | Inter 700 | 52 / 1.12 | -0.02em | Page titles. `clamp(36px, 6vw, 52px)`. |
+| h2 | Inter 700 | 40 / 1.15 | -0.018em | Section titles. `clamp(30px, 4.5vw, 40px)`. |
+| h3 | Inter 600 | 30 / 1.25 | — | Sub-sections, CTA headings. |
+| h4 | Inter 600 | 24 / 1.30 | — | The wordmark size. |
+| h5 | Inter 600 | 22 / 1.35 | — | Card titles. |
+| lede | Nunito 400 | 22 / 1.60 | — | Hero subtitle and intros. Max 40ch. |
+| body | Nunito 400 | 18 / 1.65 | — | Max `66ch`. |
+| small | Nunito 400 | 16 / 1.60 | — | Card copy, table cells, nav links. |
+| caption | Nunito 400 | 15 / 1.50 | — | Help text, photo captions. |
+| button | Nunito 700 | 16 / 1.00 | 0.01em | Buttons and nav links. |
+| badge | Nunito 700 | 13 / 1.00 | 0.06em | Uppercase. Badges and pills. |
+| overline | IBM Plex Mono 500 | 13 / 1.40 | 0.16em | Uppercase. Eyebrows, table headers. |
+| credit | IBM Plex Mono 500 | 13 / 1.40 | 0.08em | Uppercase. The footnote line, photo credits. |
 
-Steps sit at roughly 1.2–1.3× apart, and the smallest headline (19px) is comfortably above body
-(16px), so a card title always reads as a title.
+Steps sit at roughly 1.2–1.3× apart, and the smallest headline (22px) is comfortably above body
+(18px), so a card title always reads as a title.
 
 ### Loading
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@600;700&family=Nunito:wght@400;600;700&display=swap">
 ```
 
 The same URL is `font.import` in tokens.json and is emitted at the top of `tokens.css`, so importing
 the stylesheet is enough. `display=swap` is deliberate: text appears in the fallback immediately
 rather than leaving a blank hero.
 
-**Fallbacks:** `Trebuchet MS, Verdana, sans-serif` for Fredoka and Nunito — Trebuchet is the
-roundest face on both Windows and macOS, so an email or Office surface degrades in the right
-direction. `Courier New, monospace` for Space Mono.
+**Fallbacks:** `Helvetica Neue, Arial, sans-serif` for Inter — the metrics are close enough that a
+headline barely moves when the webfont is late. `Trebuchet MS, Verdana, sans-serif` for Nunito:
+Trebuchet is the roundest face on both Windows and macOS, so an email or Office surface keeps the
+warmth. `Courier New, monospace` for IBM Plex Mono.
 
 ### Caveat: parked, not adopted
 
@@ -494,7 +497,8 @@ emphasis by size, space, or the mark · tabular numerals in stat numbers and tab
 **Don't:** all-caps running text (uppercase is for badges, overlines and credits only) · a second
 display face · bold Nunito for emphasis inside a paragraph — use the mark or a new line · type over
 a photo without a solid field · letter-spacing on body copy · headlines under 26px, which makes
-Fredoka look like a UI label.
+Inter look like a UI label · Inter below 600 anywhere — the headline face is only ever semibold or
+bold.
 
 ---
 
@@ -669,7 +673,7 @@ is deliberately one step darker than the button fill.
 | In `.mv-band-tint` | white | none — the field does the separating | On blush bands. |
 | In `.mv-band-dark` | `card-dark` | 1px `line-dark` | Footer only. |
 
-Padding 24px, radius 24px, title `h5` (Fredoka 500, 19px), body `small`. Grid:
+Padding 24px, radius 24px, title `h5` (Inter 600, 22px), body `small`. Grid:
 `auto-fit, minmax(min(280px,100%), 1fr)`, 16px gap — three across at container width, one on a
 phone. Icon tile (`.mv-tile`) is a 48px circle: blush on white cards, white on blush cards, with a
 `petal-ink` Lucide icon. **The card's own fill decides the tile, not the band it sits in** — keying
@@ -714,13 +718,13 @@ placeholder disappears the moment someone types.
 
 ### Stats — `.mv-stat`
 
-`--card` (blush) and `--primary` (rose, white numbers) variants. Number in `h1` Fredoka with
+`--card` (blush) and `--primary` (rose, white numbers) variants. Number in `h1` Inter with
 tabular numerals; caption in `small`. **Ship `—` and "to confirm" until Mia supplies a real
 number** — the preview does exactly this, on purpose.
 
 ### Quote — `.mv-quote`
 
-A 3px petal rule above the quote, `h4` in Fredoka 500, attribution in `small` `muted`.
+A 3px petal rule above the quote, `h4` in Inter 600, attribution in `small` `muted`.
 `--soft` swaps the rule for a blush card. No quotation-mark graphics, no italics, no photo inside
 the quote.
 
@@ -735,7 +739,7 @@ in the kit with a shadow.
 ### Footer — `.mv-footer`
 
 The only plum field. Wordmark, one line of text, links in `link-on-dark`, and `.mv-footnote` — a
-Space Mono credit row above a `line-dark` border. Secondary buttons here take `line-dark` and white
+IBM Plex Mono credit row above a `line-dark` border. Secondary buttons here take `line-dark` and white
 text automatically via `.mv-band-dark`.
 
 ### Empty and loading — `.mv-empty`, `.mv-skeleton`
@@ -745,7 +749,7 @@ with a white shimmer sweeping over 1.4s, stopped by reduced-motion.
 
 ### Table — `.mv-table`
 
-Space Mono uppercase headers, 1px row borders, blush on row hover, numbers right-aligned and
+IBM Plex Mono uppercase headers, 1px row borders, blush on row hover, numbers right-aligned and
 tabular in `.mv-value`. Wrapped in `.mv-table-wrap` so it scrolls horizontally on a phone instead of
 breaking the page.
 
@@ -768,7 +772,7 @@ not cover — add it here first.
 | Property | Value |
 |---|---|
 | Grid | 24×24 (`--mv-icon-grid`) |
-| Stroke | 2px (`--mv-icon-stroke`) — matches Fredoka's round weight |
+| Stroke | 2px (`--mv-icon-stroke`) — matches the round shapes, not the headline face |
 | Caps and joins | round, round |
 | Sizes | 24px default, 20px (`.mv-icon--sm`) inside alerts and buttons |
 | Colors | `petal-ink` in tiles, `primary` in alerts, `currentColor` everywhere else |
@@ -890,5 +894,7 @@ An agent about to ship a screen should be able to check it against this list alo
 | Date | Change |
 |---|---|
 | 2026-09-20 | Kit created. Direction B-Round chosen from three explored (Soft Glow, Petal Poster, Blush & School Blue) after a rounded-typeface study; Fredoka + Nunito + Space Mono; 43 colors, 14 type styles. |
+| 2026-09-20 | Type ramp lifted for a full-width page (body 16→18, small 14→16, caption 13→15, button 15→16, badge 12→13, overline 11→13, h1 46→52, h2 34→40, h3 26→30, h4 22→24, h5 19→22, lede 20→22; display unchanged at 72). Mono face changed Space Mono → IBM Plex Mono at 500, the face used in the approved B-Round mock. |
+| 2026-09-20 | Display face changed **Fredoka → Inter 700** (h3–h5 at 600), tracking tightened to -0.022em/-0.02em/-0.018em on display/h1/h2, display/h1 line-height opened 1.02→1.10 and 1.08→1.12 so Inter's descenders clear the petal pill on the line below, head fallback Trebuchet MS → Helvetica Neue. Graydon had approved the B-Round mock while its webfonts were failing to load, so the face he signed off on was the Helvetica fallback, not Fredoka. Colour, radii, shapes and the petal pill unchanged. |
 | 2026-09-20 | Palette shifted pinker on request: cream/dusty-rose fields replaced by shell/blush/petal, accent and ink both replaced (old values now in the retired list). 20 hexes retired, including Calvary Chapel Academy's own blue and cream, which are retired deliberately. |
 | 2026-09-20 | Caveat (handwriting accent) parked rather than adopted; conditions for adopting it recorded in § Typography. |

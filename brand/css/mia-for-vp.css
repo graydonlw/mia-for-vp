@@ -12,9 +12,9 @@ img { max-width: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; } }
 
 /* ---- Type ---- */
-.mv-display { font-family: var(--mv-font-head); font-size: clamp(40px, 8vw, var(--mv-fs-display)); line-height: var(--mv-lh-display); font-weight: var(--mv-fw-display); letter-spacing: var(--mv-ls-display, 0); max-width: 14ch; overflow-wrap: anywhere; }
-.mv-h1, h1 { font-size: clamp(32px, 6vw, var(--mv-fs-h1)); line-height: var(--mv-lh-h1); font-weight: var(--mv-fw-h1); letter-spacing: var(--mv-ls-h1, 0); }
-.mv-h2, h2 { font-size: clamp(26px, 4.5vw, var(--mv-fs-h2)); line-height: var(--mv-lh-h2); font-weight: var(--mv-fw-h2); letter-spacing: var(--mv-ls-h2, 0); }
+.mv-display { font-family: var(--mv-font-head); font-size: clamp(44px, 8vw, var(--mv-fs-display)); line-height: var(--mv-lh-display); font-weight: var(--mv-fw-display); letter-spacing: var(--mv-ls-display, 0); max-width: 14ch; overflow-wrap: anywhere; }
+.mv-h1, h1 { font-size: clamp(36px, 6vw, var(--mv-fs-h1)); line-height: var(--mv-lh-h1); font-weight: var(--mv-fw-h1); letter-spacing: var(--mv-ls-h1, 0); }
+.mv-h2, h2 { font-size: clamp(30px, 4.5vw, var(--mv-fs-h2)); line-height: var(--mv-lh-h2); font-weight: var(--mv-fw-h2); letter-spacing: var(--mv-ls-h2, 0); }
 .mv-h3, h3 { font-size: var(--mv-fs-h3); line-height: var(--mv-lh-h3); font-weight: var(--mv-fw-h3); }
 .mv-h4, h4 { font-size: var(--mv-fs-h4); line-height: var(--mv-lh-h4); font-weight: var(--mv-fw-h4); }
 .mv-h5, h5 { font-size: var(--mv-fs-h5); line-height: var(--mv-lh-h5); font-weight: var(--mv-fw-h5); }

@@ -2,8 +2,8 @@
 version: 0.1
 name: Mia for VP
 prefix: mv
-description: "Pink-white and blush fields, one true-pink accent that carries every interactive job, Fredoka headlines and Nunito body, 24px card corners with fully round buttons and badges, and one signature detail: the petal pill that sits behind a single word per headline."
-source: "Interview with Graydon on 2026-09-20 (personality: warm, optimistic, confident; register: light-first; direction B-Round, Fredoka). Calvary Chapel Academy's own colours were read live from ccobacademy.com and deliberately not used; both sit in color.retired. Mia's last name, election date, platform copy and photos are not yet supplied."
+description: "Pink-white and blush fields, one true-pink accent that carries every interactive job, Inter headlines and Nunito body, 24px card corners with fully round buttons and badges, and one signature detail: the petal pill that sits behind a single word per headline."
+source: "Interview with Graydon on 2026-09-20 (personality: warm, optimistic, confident; register: light-first; direction B-Round; display face changed Fredoka \u2192 Inter on 2026-09-20). Calvary Chapel Academy's own colours were read live from ccobacademy.com and deliberately not used; both sit in color.retired. Mia's last name, election date, platform copy and photos are not yet supplied."
 colors:
   plum: "#3B1D2B"
   rose: "#BE4C78"
@@ -50,87 +50,87 @@ colors:
   skeleton-shine: rgba(255,255,255,.65)
 retired-colors: ["#0000B6", "#1E2A8A", "#2E1F26", "#2F7D5E", "#3D2B33", "#7A3550", "#856573", "#8E2F55", "#9A6B14", "#A63E67", "#A8536E", "#B33A3A", "#C2537E", "#D28FA6", "#E07A9E", "#E3C7D3", "#E9C4CF", "#F6E7E9", "#F7F6F2", "#FBF6F3"]
 fonts:
-  head: Fredoka
+  head: Inter
   body: Nunito
-  mono: Space Mono
+  mono: IBM Plex Mono
 typography:
   display:
     font: head
     size: 72px
-    weight: 600
-    lineHeight: 1.02
-    letterSpacing: -0.015em
+    weight: 700
+    lineHeight: 1.1
+    letterSpacing: -0.022em
   h1:
     font: head
-    size: 46px
-    weight: 600
-    lineHeight: 1.08
-    letterSpacing: -0.01em
+    size: 52px
+    weight: 700
+    lineHeight: 1.12
+    letterSpacing: -0.02em
   h2:
     font: head
-    size: 34px
-    weight: 600
+    size: 40px
+    weight: 700
     lineHeight: 1.15
-    letterSpacing: -0.01em
+    letterSpacing: -0.018em
   h3:
     font: head
-    size: 26px
-    weight: 500
+    size: 30px
+    weight: 600
     lineHeight: 1.25
   h4:
     font: head
-    size: 22px
-    weight: 500
+    size: 24px
+    weight: 600
     lineHeight: 1.3
   h5:
     font: head
-    size: 19px
-    weight: 500
+    size: 22px
+    weight: 600
     lineHeight: 1.35
   lede:
     font: body
-    size: 20px
+    size: 22px
     weight: 400
     lineHeight: 1.6
   body:
     font: body
-    size: 16px
+    size: 18px
     weight: 400
     lineHeight: 1.65
   small:
     font: body
-    size: 14px
+    size: 16px
     weight: 400
     lineHeight: 1.6
   caption:
     font: body
-    size: 13px
+    size: 15px
     weight: 400
     lineHeight: 1.5
   button:
     font: body
-    size: 15px
+    size: 16px
     weight: 700
     lineHeight: 1.0
     letterSpacing: 0.01em
   badge:
     font: body
-    size: 12px
+    size: 13px
     weight: 700
     lineHeight: 1.0
     letterSpacing: 0.06em
     transform: uppercase
   overline:
     font: mono
-    size: 11px
-    weight: 400
+    size: 13px
+    weight: 500
     lineHeight: 1.4
     letterSpacing: 0.16em
     transform: uppercase
   credit:
     font: mono
-    size: 12px
-    weight: 400
+    size: 13px
+    weight: 500
     lineHeight: 1.4
     letterSpacing: 0.08em
     transform: uppercase

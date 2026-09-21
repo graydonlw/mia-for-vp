@@ -32,8 +32,8 @@ been in the room yet, so anything marked below as hers to confirm really is hers
 | Accent count | One. `rose` carries every interactive job; `petal`/`blush` are fields; status colors are roles, not brand accents |
 | Corners | Fully round buttons and badges, 24px cards, 16px inputs, the arch for photos |
 | Depth | Flat, borders only. One 1px shadow, under the mobile Vote bar |
-| Type | Fredoka headlines + Nunito body + Space Mono labels |
-| Weight policy | Fredoka 600 at display/h1/h2 and 500 at h3–h5; Nunito 400 body, 700 for buttons, badges, labels, nav |
+| Type | Inter headlines + Nunito body + IBM Plex Mono labels |
+| Weight policy | Inter 700 at display/h1/h2 and 600 at h3–h5; Nunito 400 body, 700 for buttons, badges, labels, nav |
 | Case | Sentence case everywhere; uppercase only in `badge`, `overline` and `credit` |
 | Fonts load from | Google Fonts, one request, `display=swap` |
 | First screen needs | Nav, hero, platform cards, about block with photo |
@@ -49,7 +49,7 @@ been in the room yet, so anything marked below as hers to confirm really is hers
 | C — Blush & School Blue (CCA blue as ink and buttons) | Reads school-official rather than personal |
 | B — Petal Poster, original (square corners, Bricolage Grotesque) | Chosen for palette, rejected for shape and type: "softer, rounder, playful" |
 | Serif headline study (Fraunces, Instrument Serif, DM Serif Display, Quicksand) | "Further from what I want" — serifs dropped entirely |
-| Rounded study (Fredoka, Quicksand, Baloo 2, Comfortaa) | **Fredoka chosen**, with the rounded-shape treatment applied throughout |
+| Rounded study (Fredoka, Quicksand, Baloo 2, Comfortaa) | ~~**Fredoka chosen**~~ — superseded 2026-09-20: the mock Graydon approved had rendered in its Helvetica fallback, so the rounded face was never what he picked. Display face is now **Inter**; the rounded *shape* treatment (24px corners, round buttons, petal pill) stays |
 | Mauve-plum palette (the first version of B-Round) | "A little more pink and a little less plum" — the whole ramp was shifted toward true pink on 2026-09-20 |
 
 ## What changed after the first pink pass
