@@ -70,7 +70,7 @@ typography:
     font: head
     size: 40px
     weight: 700
-    lineHeight: 1.15
+    lineHeight: 1.25
     letterSpacing: -0.018em
   h3:
     font: head
@@ -454,7 +454,7 @@ and space, never from a heavier headline. Never mix weights inside one text bloc
 |---|---|---|---|---|
 | display | Inter 700 | 72 / 1.10 | -0.022em | Hero only. `clamp(44px, 8vw, 72px)`, and `clamp(44px, 13vw, 52px)` below 480px so a phone hero is not stuck at the floor; max 14ch. Below 821 the leading opens to `--mv-lh-display-sm` (1.22): a phone headline wraps, and the petal pill on its own line collides with the line above at 1.10. |
 | h1 | Inter 700 | 52 / 1.12 | -0.02em | Page titles. `clamp(36px, 6vw, 52px)`. |
-| h2 | Inter 700 | 40 / 1.15 | -0.018em | Section titles. `clamp(30px, 4.5vw, 40px)`. |
+| h2 | Inter 700 | 40 / 1.25 | -0.018em | Section titles. `clamp(30px, 4.5vw, 40px)`. |
 | h3 | Inter 600 | 30 / 1.25 | — | Sub-sections, CTA headings. |
 | h4 | Inter 600 | 24 / 1.30 | — | The wordmark size. |
 | h5 | Inter 600 | 22 / 1.35 | — | Card titles. |
@@ -626,10 +626,19 @@ A petal pill behind **one word per headline**.
 |---|---|---|---|
 | `.mv-mark` | `petal` | `title-on-light` (9.95:1) | The default. One per headline. |
 | `.mv-mark--solid` | `primary` | `on-primary` (4.67:1) | The footer wordmark, or one hero per site. Never both in one view. |
+| `.mv-mark--text` | none | `link` (7.05:1) | Colour only, no pill. For one word inside running copy — her middle name in the hero sub — where a pill would shout. |
 
-Padding `0.04em 0.34em`, radius `pill`, `box-decoration-break: clone` so it survives a line wrap.
+**The pill is drawn with `box-shadow`, not horizontal padding** (`padding: 0.04em 0`, then
+`box-shadow: ∓0.16em 0 0 petal`), radius `pill`, `box-decoration-break: clone`. Padding made the pill
+part of the inline box, so a marked word that *started* a line sat 0.34em to the right of the line
+above it — in "Senior. Captain. / **Teacher** in training." the second line was visibly indented.
+A shadow paints the same pill without entering layout, so the word aligns exactly and the colour
+runs into the gutter like a highlighter. 0.16em is the ceiling: the word space in Inter at 72px is
+16px, and a wider spread touches the preceding glyph.
+
 **Rules:** one mark per headline — two means neither word matters; never on a word that wraps
-mid-word; never on more than three words; never inside body copy.
+mid-word; never on more than three words; never a *pill* inside body copy (`--text` is how you mark
+a word there). A heading carrying a mark needs its leading: `h2` runs at 1.25 for this reason.
 
 ### Nav — `.mv-nav`
 
@@ -937,6 +946,7 @@ An agent about to ship a screen should be able to check it against this list alo
 | 2026-09-20 | Phone headline leading opened 1.10 → 1.22 below 821 (`layout.lh-display-sm`) and the hero sub given `space-xl` above it. Graydon: the wrapped headline and its pill read cramped on a phone. |
 | 2026-09-21 | Byline split to opposite ends of its rule (office left, school right) at Graydon's request; countdown moved to its own content-width row beneath, because inline it broke the line on a phone. |
 | 2026-09-21 | Byline up from `small` to `body`, school from `muted` to `body-on-light`, rule 2px → 3px. The size bump broke the one-line letterhead between 821 and ~1000px, so the school now falls to its own row on the rule's right end instead of jumping left. |
+| 2026-09-21 | `.mv-mark` redrawn with `box-shadow` instead of horizontal padding, so a marked word that starts a line aligns with the line above it; h2 leading 1.15 → 1.25 to clear the pill; new `.mv-mark--text` variant, used on "Grace" in the hero sub to tie her middle name to the slogan. |
 | 2026-09-20 | Palette shifted pinker on request: cream/dusty-rose fields replaced by shell/blush/petal, accent and ink both replaced (old values now in the retired list). 20 hexes retired, including Calvary Chapel Academy's own blue and cream, which are retired deliberately. |
 | 2026-09-20 | Caveat (handwriting accent) parked rather than adopted; conditions for adopting it recorded in § Typography. |
 | 2026-09-20 | Phone pass. Tokens `nav-height-sm` (56px) and `bar-height` (60px) added; body pads under the sticky bar; `.mv-card--row` / `.mv-card--kv` phone rows; `.mv-two-col .mv-media` leads when stacked; display gets a 13vw phone clamp; headings `text-wrap: balance`; `.mv-snap` sections drop `scroll-margin-top` (it doubled the nav offset on anchor jumps); `.mv-md-hide` utility. |

@@ -281,7 +281,7 @@ window.BRAND_TOKENS = {
       "font": "head",
       "size": "40px",
       "weight": 700,
-      "lineHeight": 1.15,
+      "lineHeight": 1.25,
       "letterSpacing": "-0.018em"
     },
     "h3": {

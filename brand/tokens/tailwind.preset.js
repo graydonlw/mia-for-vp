@@ -58,7 +58,7 @@ module.exports = {
       fontSize: {
         'display': ['72px', { lineHeight: '1.1', letterSpacing: '-0.022em', fontWeight: '700' }],
         'h1': ['52px', { lineHeight: '1.12', letterSpacing: '-0.02em', fontWeight: '700' }],
-        'h2': ['40px', { lineHeight: '1.15', letterSpacing: '-0.018em', fontWeight: '700' }],
+        'h2': ['40px', { lineHeight: '1.25', letterSpacing: '-0.018em', fontWeight: '700' }],
         'h3': ['30px', { lineHeight: '1.25', fontWeight: '600' }],
         'h4': ['24px', { lineHeight: '1.3', fontWeight: '600' }],
         'h5': ['22px', { lineHeight: '1.35', fontWeight: '600' }],

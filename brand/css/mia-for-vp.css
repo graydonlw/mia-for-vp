@@ -31,8 +31,12 @@ img { max-width: 100%; display: block; }
 
 /* Signature detail: the petal pill behind ONE word per headline, never more. */
 .mv-mark { background: var(--mv-petal); color: var(--mv-title-on-light); border-radius: var(--mv-radius-pill);
-  padding: 0.04em 0.34em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  padding: 0.04em 0; box-shadow: -0.16em 0 0 var(--mv-petal), 0.16em 0 0 var(--mv-petal);
+  box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .mv-mark--solid { background: var(--mv-primary); color: var(--mv-on-primary); }
+/* Text-only variant: the signature idea without a second pill in view. For one word inside running
+   copy — her middle name — where a pill would shout and bold Nunito is banned (see Type > Don't). */
+.mv-mark--text { background: none; box-shadow: none; padding: 0; color: var(--mv-link); }
 
 /* ---- Bands and layout ---- */
 .mv-band-light { background: var(--mv-field-light); color: var(--mv-title-on-light); }
