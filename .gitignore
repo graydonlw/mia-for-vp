@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Tooling
+node_modules/
+.vercel/
+
+# PROJECT_TRACKER.md is a symlink into Graydon's private memory vault
+# (~/Desktop/Context/...). It cannot travel with the repo — a clone would
+# get a dangling link — and the vault is not public. Kept local.
+PROJECT_TRACKER.md

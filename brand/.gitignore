@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+
+# Fetched or generated binary payload is re-creatable; keep manifests, drop the files.
+assets/*
+!assets/*.json
+!assets/*.md
