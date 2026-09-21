@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mia Webster for Vice President · Calvary Chapel Academy</title>
+<meta name="description" content="Mia Webster is running for Vice President at Calvary Chapel Academy. Senior, volleyball captain, future teacher. Lead with Grace.">
+<meta name="theme-color" content="#FBE7F0">
+<meta property="og:title" content="Mia Webster for Vice President">
+<meta property="og:description" content="Senior. Volleyball captain. Future teacher. Lead with Grace.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://voteformia.vercel.app/">
+<link rel="canonical" href="https://voteformia.vercel.app/">
+<!-- TODO og:image: add once a photo exists -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="brand/tokens/tokens.css">
+<link rel="stylesheet" href="brand/css/mia-for-vp.css">
+<style>
+  section{scroll-margin-top:var(--mv-nav-height)}
+  .quote{font-family:var(--mv-font-head);font-size:var(--mv-fs-h5);line-height:var(--mv-lh-h5);color:var(--mv-title-on-light)}
+  .quote-by{margin-top:var(--mv-space-md);color:var(--mv-muted);font-size:var(--mv-fs-small)}
+  .job-list{display:grid;gap:var(--mv-space-md);margin-top:var(--mv-space-lg);max-width:var(--mv-measure)}
+  .job-list li{display:flex;gap:var(--mv-space-md);align-items:flex-start}
+  .job-list ol,.job-list ul{margin:0;padding:0;list-style:none}
+  .todo{color:var(--mv-muted);font-size:var(--mv-fs-caption)}
+  [hidden]{display:none !important}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     DRAFT SITE. Everything still missing is listed in NEEDED-FROM-MIA.md
+     next to this file. Two fast wins:
+       - Set ELECTION_DATE in the config script at the bottom. It fills the
+         date everywhere on the page and turns on the countdown.
+       - Delete <div id="draft-banner"> when the real copy is in.
+     Placeholder copy is marked [in brackets] or with a .todo caption.
+     ============================================================ -->
+
+<div id="draft-banner" class="mv-alert mv-alert--warning" style="border-radius:0;max-width:none">
+  <svg class="mv-icon mv-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3zM12 10v4M12 17h.01"/></svg>
+  <div><b>Draft</b>Placeholder copy in places. Not ready to share yet.</div>
+</div>
+
+<nav class="mv-nav">
+  <a class="mv-logo" href="#top">Mia for <span class="mv-mark">VP</span></a>
+  <div class="mv-links">
+    <a href="#platform">Platform</a>
+    <a href="#job">The job</a>
+    <a href="#about">About Mia</a>
+    <a href="#vote">How to vote</a>
+    <a href="#feedback">Feedback</a>
+  </div>
+  <a class="mv-btn mv-btn--secondary mv-btn--sm" href="#vote">Vote Mia</a>
+</nav>
+
+<!-- ---------- Hero ---------- -->
+<section class="mv-hero mv-has-blobs" id="top">
+  <div class="mv-blob" aria-hidden="true" style="width:380px;height:380px;left:-140px;bottom:-180px"></div>
+  <div class="mv-blob" aria-hidden="true" style="width:90px;height:90px;right:18%;top:12%"></div>
+  <div class="mv-inner">
+    <div class="mv-row" style="gap:var(--mv-space-xs)">
+      <p class="mv-badge">Vice President · Calvary Chapel Academy</p>
+      <p class="mv-badge mv-badge--solid" id="countdown" hidden></p>
+    </div>
+    <h1 class="mv-display" style="margin-top:var(--mv-space-md)">Lead with <span class="mv-mark">Grace</span></h1>
+    <p class="mv-sub">Mia Webster, senior. Volleyball captain, future teacher, and someone who actually answers when you ask her for something.</p>
+    <div class="mv-btns">
+      <a class="mv-btn mv-btn--primary" href="#platform">See the platform</a>
+      <a class="mv-btn mv-btn--secondary" href="#vote">How to vote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- Platform ---------- -->
+<section class="mv-band-tint" id="platform">
+  <div class="mv-container">
+    <p class="mv-overline">The platform</p>
+    <h2>Three things, and she will tell you how they went.</h2>
+    <div class="mv-card-grid" style="margin-top:var(--mv-space-xl)">
+
+      <div class="mv-card">
+        <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <div class="mv-card-title">[Promise one]</div>
+        <p>[One sentence on what she will actually do, specific enough that you could check at the end of the year whether it happened.]</p>
+      </div>
+
+      <div class="mv-card">
+        <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <div class="mv-card-title">[Promise two]</div>
+        <p>[Same again. Name the thing, name when it happens.]</p>
+      </div>
+
+      <div class="mv-card">
+        <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span>
+        <div class="mv-card-title">[Promise three]</div>
+        <p>[Same again.]</p>
+      </div>
+
+    </div>
+    <p class="todo" style="margin-top:var(--mv-space-lg)">Placeholder. Mia's three promises go here, in her words.</p>
+  </div>
+</section>
+
+<!-- ---------- What the VP actually does ---------- -->
+<section class="mv-band-light" id="job">
+  <div class="mv-container">
+    <p class="mv-overline">The job</p>
+    <h2>What a Vice President actually <span class="mv-mark">does</span></h2>
+    <p class="mv-body" style="margin-top:var(--mv-space-md)">Most people vote without knowing what the office involves, so here it is plainly.</p>
+    <div class="job-list">
+      <ul>
+        <li>
+          <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div><b>[Duty one]</b><br><span class="mv-small">[One line on what it means week to week.]</span></div>
+        </li>
+        <li>
+          <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div><b>[Duty two]</b><br><span class="mv-small">[One line.]</span></div>
+        </li>
+        <li>
+          <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div><b>[Duty three]</b><br><span class="mv-small">[One line.]</span></div>
+        </li>
+      </ul>
+    </div>
+    <p class="todo" style="margin-top:var(--mv-space-lg)">Placeholder. Get the real duties from the student handbook or the StuGov advisor, not from memory.</p>
+  </div>
+</section>
+
+<!-- ---------- About ---------- -->
+<section class="mv-band-tint" id="about">
+  <div class="mv-container">
+    <div class="mv-two-col">
+      <div class="mv-stack">
+        <p class="mv-overline">Who she is</p>
+        <h2>Senior. Captain. <span class="mv-mark">Teacher</span> in training.</h2>
+        <p class="mv-body" style="margin-top:var(--mv-space-md)">Mia is a senior at Calvary Chapel Academy and a captain on the volleyball team, which mostly means she has spent three years learning how to get a group of people to show up, work, and stay kind to each other while doing it.</p>
+        <p class="mv-body" style="margin-top:var(--mv-space-sm)">She is going into education after graduation. She wants to be a teacher because she likes the part of school that happens between people, and that is the same reason she is running.</p>
+        <p class="mv-body" style="margin-top:var(--mv-space-sm)">Her middle name is Grace. She would also like you to know she will not go M.I.A.</p>
+        <div class="mv-row" style="margin-top:var(--mv-space-lg)">
+          <a class="mv-btn mv-btn--primary" href="#vote">How to vote</a>
+          <a class="mv-btn mv-btn--ghost" id="ig-link" href="#" hidden target="_blank" rel="noopener">Follow the campaign <span class="mv-arrow">→</span></a>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <div class="mv-photo-frame" style="width:min(320px,100%)">
+          <!-- TODO: put <img src="brand/assets/mia-portrait.jpg" alt="Mia Webster"> inside .mv-photo -->
+          <div class="mv-photo"></div>
+          <span class="mv-badge mv-badge--solid">Mia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- Letter ---------- -->
+<section class="mv-band-light" id="letter">
+  <div class="mv-container">
+    <p class="mv-overline">In her words</p>
+    <h2>Why she's running.</h2>
+    <div class="mv-body" style="margin-top:var(--mv-space-md)">
+      <p>[Mia writes this part. About 150 words, first person, the way she actually talks. What made her want to run, what she noticed that bugged her, what she wants this year to feel like for the people behind her.]</p>
+      <p>[It is fine if it is not polished. The point of this section is that it sounds like a person and not like a poster.]</p>
+    </div>
+    <p class="mv-credit" style="margin-top:var(--mv-space-lg)">Mia Webster</p>
+    <p class="todo" style="margin-top:var(--mv-space-md)">Placeholder. This one has to be her own writing.</p>
+  </div>
+</section>
+
+<!-- ---------- Quotes ---------- -->
+<section class="mv-band-tint" id="people">
+  <div class="mv-container">
+    <p class="mv-overline">What people say</p>
+    <h2>Three people who know her.</h2>
+    <div class="mv-card-grid" style="margin-top:var(--mv-space-xl)">
+      <div class="mv-card">
+        <p class="quote">"[A teammate, on what she is like when things are going badly.]"</p>
+        <p class="quote-by">[Name], [grade / role]</p>
+      </div>
+      <div class="mv-card">
+        <p class="quote">"[A teacher or coach, on whether she follows through.]"</p>
+        <p class="quote-by">[Name], [role]</p>
+      </div>
+      <div class="mv-card">
+        <p class="quote">"[A friend, on something specific she did for someone.]"</p>
+        <p class="quote-by">[Name], [grade]</p>
+      </div>
+    </div>
+    <p class="todo" style="margin-top:var(--mv-space-lg)">Placeholder. Real quotes from real named people, with their OK to be on a public site. Cut this section entirely rather than inventing any of it.</p>
+  </div>
+</section>
+
+<!-- ---------- How to vote ---------- -->
+<section class="mv-band-light" id="vote">
+  <div class="mv-container">
+    <p class="mv-overline">How to vote</p>
+    <h2>It takes about a <span class="mv-mark">minute</span></h2>
+    <div class="mv-card-grid" style="margin-top:var(--mv-space-xl)">
+      <div class="mv-card">
+        <div class="mv-card-title">When</div>
+        <p><b class="js-date">[election day]</b>. [Add the time or the period it happens during.]</p>
+      </div>
+      <div class="mv-card">
+        <div class="mv-card-title">Where</div>
+        <p>At school. [Add the actual room, or the period, or how the ballot reaches you.]</p>
+      </div>
+      <div class="mv-card">
+        <div class="mv-card-title">Who can</div>
+        <p>[Which grades vote. Whether you need anything with you.]</p>
+      </div>
+    </div>
+    <div class="mv-cta mv-cta--solid" style="margin-top:var(--mv-space-xl)">
+      <div>
+        <h3>Vote Mia on <span class="js-date">[election day]</span>.</h3>
+        <p class="mv-body" style="margin-top:var(--mv-space-xs);color:var(--mv-on-primary)">Put it in your phone now so you don't forget.</p>
+      </div>
+      <a class="mv-btn mv-btn--secondary" href="#top">Mia for VP</a>
+    </div>
+    <p class="todo" style="margin-top:var(--mv-space-lg)">Set ELECTION_DATE at the bottom of this file and the date fills in everywhere.</p>
+  </div>
+</section>
+
+<!-- ---------- Feedback ---------- -->
+<section class="mv-band-tint" id="feedback">
+  <div class="mv-container">
+    <p class="mv-overline">Tell her something</p>
+    <div class="mv-two-col" style="align-items:center">
+      <div class="mv-stack">
+        <h2>What should she <span class="mv-mark">fix</span> first?</h2>
+        <p class="mv-body" style="margin-top:var(--mv-space-md)">If something about this school bugs you, say it. Mia reads all of these, and the ones that come up more than once are the ones that end up on her list.</p>
+        <div class="mv-row" style="margin-top:var(--mv-space-lg)">
+          <!-- TODO: replace # with the Google Form URL -->
+          <a class="mv-btn mv-btn--primary" href="#" target="_blank" rel="noopener">Leave feedback</a>
+        </div>
+        <p class="mv-caption" style="margin-top:var(--mv-space-sm)">Takes about thirty seconds. Opens a Google Form.</p>
+      </div>
+      <div class="mv-card">
+        <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <div class="mv-card-title">Three questions, that's it</div>
+        <p>What grade you're in, the one thing you'd change, and your first name so she can follow up. Nothing else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="mv-footer">
+  <div style="max-width:var(--mv-container);margin:0 auto">
+    <p class="mv-h4">Mia for <span class="mv-mark">VP</span></p>
+    <p class="mv-h5" style="margin-top:var(--mv-space-sm);color:var(--mv-title-on-dark)">Vote <span class="js-date">[election day]</span>, at school.</p>
+    <div class="mv-row" style="margin-top:var(--mv-space-lg)">
+      <a class="mv-btn mv-btn--primary" href="#feedback">Leave feedback</a>
+      <a class="mv-btn mv-btn--secondary" id="ig-link-footer" href="#" hidden target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="mv-footnote">
+      <span>Mia Webster · Calvary Chapel Academy</span>
+      <span>Lead with Grace</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mv-sticky-cta">
+  <a class="mv-btn mv-btn--secondary" href="#platform">Platform</a>
+  <a class="mv-btn mv-btn--primary" href="#vote">How to vote</a>
+</div>
+
+<script>
+/* ======================================================================
+   CONFIG. Set these two and the page fills itself in. Nothing else to edit.
+   ====================================================================== */
+var ELECTION_DATE = null;   /* e.g. "2026-10-08"  (YYYY-MM-DD, local) */
+var INSTAGRAM     = null;   /* e.g. "https://instagram.com/miaforvp"  */
+/* ====================================================================== */
+
+(function () {
+  if (ELECTION_DATE) {
+    var parts = ELECTION_DATE.split('-');
+    var d = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+    var long  = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+    var short = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+
+    var spans = document.querySelectorAll('.js-date');
+    for (var i = 0; i < spans.length; i++) spans[i].textContent = short;
+
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var days = Math.round((d - today) / 86400000);
+    var cd = document.getElementById('countdown');
+    if (days > 1)       cd.textContent = days + ' days to go';
+    else if (days === 1) cd.textContent = 'Tomorrow';
+    else if (days === 0) cd.textContent = 'Today';
+    if (days >= 0) cd.hidden = false;
+
+    document.title = 'Mia Webster for Vice President · vote ' + short;
+    var when = document.querySelector('#vote .js-date');
+    if (when) when.textContent = long;
+  }
+
+  if (INSTAGRAM) {
+    var links = [document.getElementById('ig-link'), document.getElementById('ig-link-footer')];
+    for (var j = 0; j < links.length; j++) {
+      if (links[j]) { links[j].href = INSTAGRAM; links[j].hidden = false; }
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
