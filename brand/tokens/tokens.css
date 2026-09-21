@@ -109,5 +109,6 @@
   --mv-nav-height-sm: 56px;
   --mv-bar-height: 60px;
   --mv-measure: 66ch;
+  --mv-lh-display-sm: 1.22;
   /* breakpoints: sm 640px, md 820px, lg 1024px, xl 1280px */
 }

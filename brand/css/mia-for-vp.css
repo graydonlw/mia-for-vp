@@ -13,6 +13,7 @@ img { max-width: 100%; display: block; }
 
 /* ---- Type ---- */
 .mv-display { font-family: var(--mv-font-head); font-size: clamp(44px, 8vw, var(--mv-fs-display)); line-height: var(--mv-lh-display); font-weight: var(--mv-fw-display); letter-spacing: var(--mv-ls-display, 0); max-width: 14ch; overflow-wrap: anywhere; }
+@media (max-width: 820px) { .mv-display { line-height: var(--mv-lh-display-sm); } }  /* a phone headline wraps, and the petal pill on its own line needs the leading that 1.10 does not give it */
 @media (max-width: 480px) { .mv-display { font-size: clamp(44px, 13vw, 52px); } }  /* 8vw is 30px on a phone, so the floor was doing all the work; a phone hero wants the headline nearer h1 than h2 */
 .mv-h1, h1 { font-size: clamp(36px, 6vw, var(--mv-fs-h1)); line-height: var(--mv-lh-h1); font-weight: var(--mv-fw-h1); letter-spacing: var(--mv-ls-h1, 0); }
 .mv-h2, h2 { font-size: clamp(30px, 4.5vw, var(--mv-fs-h2)); line-height: var(--mv-lh-h2); font-weight: var(--mv-fw-h2); letter-spacing: var(--mv-ls-h2, 0); }
@@ -73,8 +74,19 @@ img { max-width: 100%; display: block; }
 .mv-hero .mv-inner { max-width: var(--mv-container); margin: 0 auto; padding: var(--mv-space-3xl) var(--mv-gutter); }
 .mv-hero .mv-sub { margin-top: var(--mv-space-lg); font-size: var(--mv-fs-lede); line-height: var(--mv-lh-lede); color: var(--mv-body-on-light); max-width: 40ch; }
 .mv-hero .mv-btns { margin-top: var(--mv-space-xl); display: flex; gap: var(--mv-space-sm); flex-wrap: wrap; }
-@media (max-width: 820px) { .mv-hero .mv-inner { padding: var(--mv-space-xl) var(--mv-space-md); } }
+@media (max-width: 820px) { .mv-hero .mv-inner { padding: var(--mv-space-xl) var(--mv-space-md); } .mv-hero .mv-sub { margin-top: var(--mv-space-xl); } }
 @media (max-width: 480px) { .mv-hero .mv-btns .mv-btn { flex: 1 1 auto; } }  /* when the pair wraps on a narrow phone, each takes the full row instead of a ragged short second button */
+
+/* The hero's facts line, under the sub: office and school on a petal rule, so the
+   headline is the first thing read and the pill shape stays exclusive to .mv-mark.
+   The countdown badge lives here too — when there is a date, it is the one pill in view. */
+.mv-hero-byline { margin-top: var(--mv-space-lg); padding-top: var(--mv-space-md); border-top: 2px solid var(--mv-petal);
+  max-width: 52ch; display: flex; align-items: center; gap: var(--mv-space-sm); flex-wrap: wrap; }
+/* Set in the label face, sentence case, with the office dark and the school muted:
+   a byline the page meant to write, not a caption left over from a template. */
+.mv-hero-byline .mv-meta { font-family: var(--mv-font-head); font-size: var(--mv-fs-small); font-weight: var(--mv-fw-h3);
+  line-height: var(--mv-lh-small); color: var(--mv-title-on-light); }
+.mv-hero-byline .mv-meta span { color: var(--mv-muted); }
 
 /* Hero with a portrait beside the copy. Below 821 the arch is removed rather than
    shrunk: a phone hero is one thumb-length and a photo would cost the whole fold. */

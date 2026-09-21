@@ -158,6 +158,7 @@ layout:
   nav-height-sm: 56px
   bar-height: 60px
   measure: 66ch
+  lh-display-sm: 1.22
   breakpoints:
     sm: 640px
     md: 820px
@@ -451,7 +452,7 @@ and space, never from a heavier headline. Never mix weights inside one text bloc
 
 | Style | Face | Size / line height | Tracking | Notes |
 |---|---|---|---|---|
-| display | Inter 700 | 72 / 1.10 | -0.022em | Hero only. `clamp(44px, 8vw, 72px)`, and `clamp(44px, 13vw, 52px)` below 480px so a phone hero is not stuck at the floor; max 14ch. |
+| display | Inter 700 | 72 / 1.10 | -0.022em | Hero only. `clamp(44px, 8vw, 72px)`, and `clamp(44px, 13vw, 52px)` below 480px so a phone hero is not stuck at the floor; max 14ch. Below 821 the leading opens to `--mv-lh-display-sm` (1.22): a phone headline wraps, and the petal pill on its own line collides with the line above at 1.10. |
 | h1 | Inter 700 | 52 / 1.12 | -0.02em | Page titles. `clamp(36px, 6vw, 52px)`. |
 | h2 | Inter 700 | 40 / 1.15 | -0.018em | Section titles. `clamp(30px, 4.5vw, 40px)`. |
 | h3 | Inter 600 | 30 / 1.25 | — | Sub-sections, CTA headings. |
@@ -647,6 +648,14 @@ hides** — the sticky bar carries the ask instead. Focus ring: 2px `focus`, 4px
 Padding 96px top and bottom, display headline capped at 14ch, `.mv-sub` lede at 40ch, buttons 40px
 below. At most one decorative device: two blobs **or** one portrait, never both. There is **no dark
 hero** in this brand — a plum hero would make the page a poster, and the one idea says person.
+
+**The hero reads headline → sub → byline → buttons.** The office and the school are *not* an eyebrow
+above the headline: a pill there is 466px of pink over the one line you want read, and it puts a
+second pill in view competing with `.mv-mark`. They go in `.mv-hero-byline` under the sub — a 2px
+`petal` rule, then the office in the label face at `small`/600 in `title-on-light` and the school in
+`muted`, so the line carries hierarchy of its own instead of reading as a caption. Max width 52ch so
+the school name does not orphan. The countdown badge sits in this row: when there is a date, it is
+the only pill in the hero besides the mark, which is the point.
 
 ### Buttons — `.mv-btn`
 
@@ -918,6 +927,8 @@ An agent about to ship a screen should be able to check it against this list alo
 | 2026-09-20 | Display face changed **Fredoka → Inter 700** (h3–h5 at 600), tracking tightened to -0.022em/-0.02em/-0.018em on display/h1/h2, display/h1 line-height opened 1.02→1.10 and 1.08→1.12 so Inter's descenders clear the petal pill on the line below, head fallback Trebuchet MS → Helvetica Neue. Graydon had approved the B-Round mock while its webfonts were failing to load, so the face he signed off on was the Helvetica fallback, not Fredoka. Colour, radii, shapes and the petal pill unchanged. |
 | 2026-09-20 | Three real photos of Mia wired in: hero arch (wide screens only), About arch, and a round portrait in the vote CTA. `.mv-hero-split` added for the hero's two-column layout; `.mv-photo img` now crops at `50% 25%` so a centred cover crop takes the feet rather than the head. |
 | 2026-09-20 | Nav links, buttons and badges moved from Nunito 700 to **Inter 600**. Graydon pointed at the nav, where Nunito links sat beside an Inter wordmark; the same split existed on every button. Nunito is now prose only. |
+| 2026-09-20 | Hero eyebrow pill replaced by `.mv-hero-byline` under the sub, chosen by Graydon from five placements drawn against the real hero (pill above / on the photo / rotated left rail / byline / letterhead rule). First cut set it as a mono overline; he called it "cheap and like an afterthought", so it is Inter 600 at `small` with the office dark and the school muted. |
+| 2026-09-20 | Phone headline leading opened 1.10 → 1.22 below 821 (`layout.lh-display-sm`) and the hero sub given `space-xl` above it. Graydon: the wrapped headline and its pill read cramped on a phone. |
 | 2026-09-20 | Palette shifted pinker on request: cream/dusty-rose fields replaced by shell/blush/petal, accent and ink both replaced (old values now in the retired list). 20 hexes retired, including Calvary Chapel Academy's own blue and cream, which are retired deliberately. |
 | 2026-09-20 | Caveat (handwriting accent) parked rather than adopted; conditions for adopting it recorded in § Typography. |
 | 2026-09-20 | Phone pass. Tokens `nav-height-sm` (56px) and `bar-height` (60px) added; body pads under the sticky bar; `.mv-card--row` / `.mv-card--kv` phone rows; `.mv-two-col .mv-media` leads when stacked; display gets a 13vw phone clamp; headings `text-wrap: balance`; `.mv-snap` sections drop `scroll-margin-top` (it doubled the nav offset on anchor jumps); `.mv-md-hide` utility. |

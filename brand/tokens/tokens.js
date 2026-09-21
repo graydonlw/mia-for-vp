@@ -384,6 +384,7 @@ window.BRAND_TOKENS = {
     "nav-height-sm": "56px",
     "bar-height": "60px",
     "measure": "66ch",
+    "lh-display-sm": "1.22",
     "breakpoints": {
       "sm": "640px",
       "md": "820px",
