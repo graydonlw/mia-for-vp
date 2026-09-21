@@ -653,9 +653,11 @@ hero** in this brand — a plum hero would make the page a poster, and the one i
 above the headline: a pill there is 466px of pink over the one line you want read, and it puts a
 second pill in view competing with `.mv-mark`. They go in `.mv-hero-byline` under the sub — a 2px
 `petal` rule, then the office in the label face at `small`/600 in `title-on-light` and the school in
-`muted`, so the line carries hierarchy of its own instead of reading as a caption. Max width 52ch so
-the school name does not orphan. The countdown badge sits in this row: when there is a date, it is
-the only pill in the hero besides the mark, which is the point.
+`muted`. **The two sit at opposite ends of the rule** — office flush left, school flush right,
+landing exactly on the rule's ends like a letterhead — so the line reads as two facts rather than one
+run-on sentence. Max width 52ch. The countdown badge takes its **own row** beneath, content-width:
+inline it forces the office to wrap on a phone and shoves the school off the rule's right edge. When
+there is a date it is the only pill in the hero besides the mark, which is the point.
 
 ### Buttons — `.mv-btn`
 
@@ -929,6 +931,7 @@ An agent about to ship a screen should be able to check it against this list alo
 | 2026-09-20 | Nav links, buttons and badges moved from Nunito 700 to **Inter 600**. Graydon pointed at the nav, where Nunito links sat beside an Inter wordmark; the same split existed on every button. Nunito is now prose only. |
 | 2026-09-20 | Hero eyebrow pill replaced by `.mv-hero-byline` under the sub, chosen by Graydon from five placements drawn against the real hero (pill above / on the photo / rotated left rail / byline / letterhead rule). First cut set it as a mono overline; he called it "cheap and like an afterthought", so it is Inter 600 at `small` with the office dark and the school muted. |
 | 2026-09-20 | Phone headline leading opened 1.10 → 1.22 below 821 (`layout.lh-display-sm`) and the hero sub given `space-xl` above it. Graydon: the wrapped headline and its pill read cramped on a phone. |
+| 2026-09-21 | Byline split to opposite ends of its rule (office left, school right) at Graydon's request; countdown moved to its own content-width row beneath, because inline it broke the line on a phone. |
 | 2026-09-20 | Palette shifted pinker on request: cream/dusty-rose fields replaced by shell/blush/petal, accent and ink both replaced (old values now in the retired list). 20 hexes retired, including Calvary Chapel Academy's own blue and cream, which are retired deliberately. |
 | 2026-09-20 | Caveat (handwriting accent) parked rather than adopted; conditions for adopting it recorded in § Typography. |
 | 2026-09-20 | Phone pass. Tokens `nav-height-sm` (56px) and `bar-height` (60px) added; body pads under the sticky bar; `.mv-card--row` / `.mv-card--kv` phone rows; `.mv-two-col .mv-media` leads when stacked; display gets a 13vw phone clamp; headings `text-wrap: balance`; `.mv-snap` sections drop `scroll-margin-top` (it doubled the nav offset on anchor jumps); `.mv-md-hide` utility. |

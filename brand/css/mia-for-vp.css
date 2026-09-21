@@ -81,12 +81,16 @@ img { max-width: 100%; display: block; }
    headline is the first thing read and the pill shape stays exclusive to .mv-mark.
    The countdown badge lives here too — when there is a date, it is the one pill in view. */
 .mv-hero-byline { margin-top: var(--mv-space-lg); padding-top: var(--mv-space-md); border-top: 2px solid var(--mv-petal);
-  max-width: 52ch; display: flex; align-items: center; gap: var(--mv-space-sm); flex-wrap: wrap; }
+  max-width: 52ch; display: flex; align-items: baseline; justify-content: space-between;
+  gap: var(--mv-space-sm) var(--mv-space-lg); flex-wrap: wrap; }
+/* The countdown takes its own row under the letterhead line. Inline, it forces the office to
+   wrap on a phone and pushes the school off the rule's right edge. */
+.mv-hero-byline #countdown { flex-basis: 100%; max-width: max-content; margin-top: var(--mv-space-xs); }
 /* Set in the label face, sentence case, with the office dark and the school muted:
    a byline the page meant to write, not a caption left over from a template. */
 .mv-hero-byline .mv-meta { font-family: var(--mv-font-head); font-size: var(--mv-fs-small); font-weight: var(--mv-fw-h3);
   line-height: var(--mv-lh-small); color: var(--mv-title-on-light); }
-.mv-hero-byline .mv-meta span { color: var(--mv-muted); }
+.mv-hero-byline .mv-meta--end { color: var(--mv-muted); text-align: right; }
 
 /* Hero with a portrait beside the copy. Below 821 the arch is removed rather than
    shrunk: a phone hero is one thumb-length and a photo would cost the whole fold. */
