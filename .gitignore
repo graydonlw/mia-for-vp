@@ -9,3 +9,5 @@ node_modules/
 # (~/Desktop/Context/...). It cannot travel with the repo — a clone would
 # get a dangling link — and the vault is not public. Kept local.
 PROJECT_TRACKER.md
+.vercel
+.env*
