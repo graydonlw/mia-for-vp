@@ -7,6 +7,19 @@ Everything below is placeholder copy sitting in `index.html`, marked
 Don't #9: no invented promises, quotes, numbers or dates. Tick these off as
 they come in.
 
+## How the answers are coming back (2026-09-21)
+
+A Google Form was sent to Mia (miagracew8@gmail.com) on 2026-09-21 covering
+every open item below.
+
+- **Form:** https://docs.google.com/forms/d/e/1FAIpQLSdMnv-fsg5GE329k5JPGCbjT3U2RD_0C_E-0cDmMShSq3IcvA/viewform
+- **Responses land in Drive sheet** `1L2EQedcdKGk5QhGM50GN84ARakxgTENL91Ii1Muj-KE`
+  ("Mia for VP — what the site still needs (Responses)").
+
+**No agent is notified when she submits.** Nothing pushes; the sheet has to be
+read on request. To pick this up: read that sheet via the Drive connector, then
+fill in the items below. The form is set to *anyone with the link*.
+
 ## Blocking a real launch
 
 These three are the difference between a draft and something you can put a QR
