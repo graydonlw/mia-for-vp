@@ -19,11 +19,6 @@
 <link rel="stylesheet" href="brand/css/mia-for-vp.css">
 <style>
   section{scroll-margin-top:var(--mv-nav-height)}
-  .quote{font-family:var(--mv-font-head);font-size:var(--mv-fs-h5);line-height:var(--mv-lh-h5);color:var(--mv-title-on-light)}
-  .quote-by{margin-top:var(--mv-space-md);color:var(--mv-muted);font-size:var(--mv-fs-small)}
-  .job-list{display:grid;gap:var(--mv-space-md);margin-top:var(--mv-space-lg);max-width:var(--mv-measure)}
-  .job-list li{display:flex;gap:var(--mv-space-md);align-items:flex-start}
-  .job-list ol,.job-list ul{margin:0;padding:0;list-style:none}
   .todo{color:var(--mv-muted);font-size:var(--mv-fs-caption)}
   [hidden]{display:none !important}
 </style>
@@ -110,21 +105,19 @@
     <p class="mv-overline">The job</p>
     <h2>What a Vice President actually <span class="mv-mark">does</span></h2>
     <p class="mv-body" style="margin-top:var(--mv-space-md)">Most people vote without knowing what the office involves, so here it is plainly.</p>
-    <div class="job-list">
-      <ul>
-        <li>
-          <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <div><b>[Duty one]</b><br><span class="mv-small">[One line on what it means week to week.]</span></div>
-        </li>
-        <li>
-          <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <div><b>[Duty two]</b><br><span class="mv-small">[One line.]</span></div>
-        </li>
-        <li>
-          <span class="mv-tile"><svg class="mv-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <div><b>[Duty three]</b><br><span class="mv-small">[One line.]</span></div>
-        </li>
-      </ul>
+    <div class="mv-dd-grid">
+      <div class="mv-dd">
+        <span class="mv-badge">[Duty one]</span>
+        <p>[One line on what it means week to week.]</p>
+      </div>
+      <div class="mv-dd">
+        <span class="mv-badge">[Duty two]</span>
+        <p>[One line.]</p>
+      </div>
+      <div class="mv-dd">
+        <span class="mv-badge">[Duty three]</span>
+        <p>[One line.]</p>
+      </div>
     </div>
     <p class="todo" style="margin-top:var(--mv-space-lg)">Placeholder. Get the real duties from the student handbook or the StuGov advisor, not from memory.</p>
   </div>
@@ -175,19 +168,19 @@
   <div class="mv-container">
     <p class="mv-overline">What people say</p>
     <h2>Three people who know her.</h2>
-    <div class="mv-card-grid" style="margin-top:var(--mv-space-xl)">
-      <div class="mv-card">
-        <p class="quote">"[A teammate, on what she is like when things are going badly.]"</p>
-        <p class="quote-by">[Name], [grade / role]</p>
-      </div>
-      <div class="mv-card">
-        <p class="quote">"[A teacher or coach, on whether she follows through.]"</p>
-        <p class="quote-by">[Name], [role]</p>
-      </div>
-      <div class="mv-card">
-        <p class="quote">"[A friend, on something specific she did for someone.]"</p>
-        <p class="quote-by">[Name], [grade]</p>
-      </div>
+    <div class="mv-dd-grid">
+      <figure class="mv-quote">
+        <blockquote>[A teammate, on what she is like when things are going badly.]</blockquote>
+        <figcaption>[Name], [grade or role]</figcaption>
+      </figure>
+      <figure class="mv-quote">
+        <blockquote>[A teacher or coach, on whether she follows through.]</blockquote>
+        <figcaption>[Name], [role]</figcaption>
+      </figure>
+      <figure class="mv-quote">
+        <blockquote>[A friend, on something specific she did for someone.]</blockquote>
+        <figcaption>[Name], [grade]</figcaption>
+      </figure>
     </div>
     <p class="todo" style="margin-top:var(--mv-space-lg)">Placeholder. Real quotes from real named people, with their OK to be on a public site. Cut this section entirely rather than inventing any of it.</p>
   </div>
