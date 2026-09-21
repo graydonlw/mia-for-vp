@@ -2,7 +2,7 @@
 version: 0.1
 name: Mia for VP
 prefix: mv
-description: "Pink-white and blush fields, one true-pink accent that carries every interactive job, Inter headlines and Nunito body, 24px card corners with fully round buttons and badges, and one signature detail: the petal pill that sits behind a single word per headline."
+description: "Pink-white and blush fields, one true-pink accent that carries every interactive job, Inter headlines and Nunito body, 24px card corners with fully round buttons and badges, and one signature detail: the petal mark on a single word per headline \u2014 an underline in copy, the enclosed pill in the wordmark."
 source: "Interview with Graydon on 2026-09-20 (personality: warm, optimistic, confident; register: light-first; direction B-Round; display face changed Fredoka \u2192 Inter on 2026-09-20). Calvary Chapel Academy's own colours were read live from ccobacademy.com and deliberately not used; both sit in color.retired. Mia's last name, election date, platform copy and photos are not yet supplied."
 colors:
   plum: "#3B1D2B"
@@ -221,11 +221,13 @@ Every rule below ladders to it:
 **Personality:** Warm · Optimistic · Confident.
 
 **The governing rule.** *One accent, one mark, one dark band.* Rose is the only interactive color,
-the petal pill appears once per headline, and plum appears only in the footer. When something feels
+the petal mark appears once per headline, and plum appears only in the footer. When something feels
 flat, the fix is more space or a band change — never another color.
 
-**Signature detail.** `.mv-mark`: a petal pill behind exactly one word per headline. It is how a
-stranger recognizes two pages as the same campaign, and it is cheap — one span, no image.
+**Signature detail.** `.mv-mark`: a petal mark on exactly one word per headline — a **0.14em petal
+underline** in running headlines, and the **enclosed pill** (`--pill`) in the wordmark, where a logo
+needs a shape. It is how a stranger recognizes two pages as the same campaign, and it is cheap — one
+span, no image. *(The underline replaced the pill everywhere but the wordmark on 2026-09-21.)*
 
 ---
 
@@ -281,7 +283,7 @@ answer for a two-week campaign: nothing to commission, nothing to license, and i
 | Version | Use | Spec |
 |---|---|---|
 | Primary wordmark | Nav, footer, anywhere the campaign signs its name | "Mia for VP" — Inter 600, `--mv-fs-h4` (24px), `--mv-title-on-light`, tracking `-0.005em` |
-| Marked wordmark | One per page maximum, usually the footer | "Mia for **VP**" with `.mv-mark` on "VP" |
+| Marked wordmark | One per page maximum, usually the footer | "Mia for **VP**" with `.mv-mark .mv-mark--pill` on "VP" — the wordmark keeps the enclosed pill; an underlined logo reads as underlined text |
 | Short form | Favicon, sticker, profile picture | "M" in Inter 600, white on `--mv-primary`, in a `--mv-radius-tile` circle |
 
 - **Clear space:** one cap-height of Inter on every side. In the nav that is the `--mv-space-md`
@@ -307,7 +309,7 @@ One accent. Most of the page is field; the only saturated color is the one you p
 |---|---|---|
 | shell | `#FFF9FB` | The default page field. A pink-white, so the page reads warm rather than clinical. |
 | blush | `#FBE7F0` | Alternating band field, decorative circles, soft cards. |
-| petal | `#F3C6DA` | The signature pill behind a headline word, badges, the photo arch, icon tiles. |
+| petal | `#F3C6DA` | The signature mark — underline under a headline word, pill behind the wordmark — plus badges, the photo arch, icon tiles. |
 | mid-rose | `#E58CAF` | Mid tone for charts, illustration and dividers. **Never a text color and never a text field.** |
 | rose | `#BE4C78` | The interactive color: primary buttons, focus ring, first chart series. |
 | rose-deep | `#992D56` | Links, hover fill, and text sitting on petal or blush. |
@@ -437,7 +439,7 @@ Takeaways an agent should carry:
 
 **Inter does the headlines, Nunito does everything you actually read, and IBM Plex Mono does the
 small structural labels.** The warmth in this brand comes from colour and shape — the pink, the 24px
-corners, the fully round buttons, the petal pill — so the letterforms do not have to carry it too.
+corners, the fully round buttons, the petal mark — so the letterforms do not have to carry it too.
 Inter is neutral and tight, which keeps a slogan at 72px from reading as a children's poster;
 Nunito's slightly rounded shapes put the friendliness back into anything you read at length; IBM
 Plex Mono's uppercase overlines give the soft page enough structure to look designed.
@@ -452,7 +454,7 @@ and space, never from a heavier headline. Never mix weights inside one text bloc
 
 | Style | Face | Size / line height | Tracking | Notes |
 |---|---|---|---|---|
-| display | Inter 700 | 72 / 1.10 | -0.022em | Hero only. `clamp(44px, 8vw, 72px)`, and `clamp(44px, 13vw, 52px)` below 480px so a phone hero is not stuck at the floor; max 14ch. Below 821 the leading opens to `--mv-lh-display-sm` (1.22): a phone headline wraps, and the petal pill on its own line collides with the line above at 1.10. |
+| display | Inter 700 | 72 / 1.10 | -0.022em | Hero only. `clamp(44px, 8vw, 72px)`, and `clamp(44px, 13vw, 52px)` below 480px so a phone hero is not stuck at the floor; max 14ch. Below 821 the leading opens to `--mv-lh-display-sm` (1.22): a phone headline wraps, and a marked word on its own line is tight against the line above at 1.10. |
 | h1 | Inter 700 | 52 / 1.12 | -0.02em | Page titles. `clamp(36px, 6vw, 52px)`. |
 | h2 | Inter 700 | 40 / 1.25 | -0.018em | Section titles. `clamp(30px, 4.5vw, 40px)`. |
 | h3 | Inter 600 | 30 / 1.25 | — | Sub-sections, CTA headings. |
@@ -620,25 +622,29 @@ carries `.is-hover`, `.is-focus`, `.is-active`, `.is-disabled`, `.is-loading`, `
 
 ### The mark — `.mv-mark` (signature detail)
 
-A petal pill behind **one word per headline**.
+A petal mark on **one word per headline**.
 
-| Variant | Fill | Text | Use |
+| Variant | Treatment | Text | Use |
 |---|---|---|---|
-| `.mv-mark` | `petal` | `title-on-light` (9.95:1) | The default. One per headline. |
-| `.mv-mark--solid` | `primary` | `on-primary` (4.67:1) | The footer wordmark, or one hero per site. Never both in one view. |
-| `.mv-mark--text` | none | `link` (7.05:1) | Colour only, no pill. For one word inside running copy — her middle name in the hero sub — where a pill would shout. |
+| `.mv-mark` | `petal` underline, 0.14em thick, 0.08em offset, `skip-ink: none` | `title-on-light` | The default. One per headline. |
+| `.mv-mark--pill` | enclosed `petal` pill | `title-on-light` (9.95:1) | The wordmark only. A logo needs a shape; underlined text reads as a link. |
+| `.mv-mark--solid` | enclosed `primary` pill | `on-primary` (4.67:1) | A wordmark on a dark field. Never in the same view as `--pill`. |
+| `.mv-mark--text` | colour only | `link` (7.05:1) | One word inside running copy — her middle name in the hero sub. |
 
-**The pill is drawn with `box-shadow`, not horizontal padding** (`padding: 0.04em 0`, then
-`box-shadow: ∓0.16em 0 0 petal`), radius `pill`, `box-decoration-break: clone`. Padding made the pill
-part of the inline box, so a marked word that *started* a line sat 0.34em to the right of the line
-above it — in "Senior. Captain. / **Teacher** in training." the second line was visibly indented.
-A shadow paints the same pill without entering layout, so the word aligns exactly and the colour
-runs into the gutter like a highlighter. 0.16em is the ceiling: the word space in Inter at 72px is
-16px, and a wider spread touches the preceding glyph.
+**Why the default is an underline.** The pill was the original signature and it cost two rounds of
+corrections: it sat inside the inline box, so a marked word starting a line was pushed right of the
+line above it, and its height crowded the descenders overhead. An underline cannot do either. Where
+the pill survives — the wordmark — it is drawn with `box-shadow`, never horizontal padding
+(`padding: 0.04em 0`, `box-shadow: ∓0.16em 0 0 petal`), for exactly that reason; **0.16em is the
+ceiling**, since the word space in Inter at 72px is 16px and a wider spread touches the preceding
+glyph. The nav wordmark widens to 0.3em, where there is no preceding word to touch.
 
-**Rules:** one mark per headline — two means neither word matters; never on a word that wraps
-mid-word; never on more than three words; never a *pill* inside body copy (`--text` is how you mark
-a word there). A heading carrying a mark needs its leading: `h2` runs at 1.25 for this reason.
+`text-decoration-skip-ink: none` is deliberate — the rule runs through descenders rather than
+breaking around them, which is what makes it read as a mark instead of a link.
+
+**Rules:** one mark per headline — two means neither word matters; never on more than three words;
+never `--pill` inside body copy (`--text` is how you mark a word there); never an underlined
+wordmark. `h2` runs at 1.25 leading to give a marked line room.
 
 ### Nav — `.mv-nav`
 
@@ -947,6 +953,7 @@ An agent about to ship a screen should be able to check it against this list alo
 | 2026-09-21 | Byline split to opposite ends of its rule (office left, school right) at Graydon's request; countdown moved to its own content-width row beneath, because inline it broke the line on a phone. |
 | 2026-09-21 | Byline up from `small` to `body`, school from `muted` to `body-on-light`, rule 2px → 3px. The size bump broke the one-line letterhead between 821 and ~1000px, so the school now falls to its own row on the rule's right end instead of jumping left. |
 | 2026-09-21 | `.mv-mark` redrawn with `box-shadow` instead of horizontal padding, so a marked word that starts a line aligns with the line above it; h2 leading 1.15 → 1.25 to clear the pill; new `.mv-mark--text` variant, used on "Grace" in the hero sub to tie her middle name to the slogan. |
+| 2026-09-21 | **Signature changed: the mark is now a petal underline, not a pill** (Graydon, chosen from five treatments drawn on the real headlines). The enclosed pill survives as `.mv-mark--pill` on the wordmark only — an underlined logo reads as underlined text. |
 | 2026-09-20 | Palette shifted pinker on request: cream/dusty-rose fields replaced by shell/blush/petal, accent and ink both replaced (old values now in the retired list). 20 hexes retired, including Calvary Chapel Academy's own blue and cream, which are retired deliberately. |
 | 2026-09-20 | Caveat (handwriting accent) parked rather than adopted; conditions for adopting it recorded in § Typography. |
 | 2026-09-20 | Phone pass. Tokens `nav-height-sm` (56px) and `bar-height` (60px) added; body pads under the sticky bar; `.mv-card--row` / `.mv-card--kv` phone rows; `.mv-two-col .mv-media` leads when stacked; display gets a 13vw phone clamp; headings `text-wrap: balance`; `.mv-snap` sections drop `scroll-margin-top` (it doubled the nav offset on anchor jumps); `.mv-md-hide` utility. |

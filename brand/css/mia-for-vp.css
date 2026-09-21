@@ -1,7 +1,7 @@
 /* Mia for VP components. Requires tokens/tokens.css. Every color and font here is a --mv-* token;
    nothing else. Classes are .mv-* so they never collide with app styles.
    Register: light-first. Cream-pink and blush bands all the way down; the plum field is the footer only.
-   Signature detail: .mv-mark, the petal pill behind one word per headline. */
+   Signature detail: .mv-mark, a petal underline under one word per headline; .mv-mark--pill for the wordmark. */
 
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; background: var(--mv-field-light); color: var(--mv-title-on-light);
@@ -30,13 +30,22 @@ img { max-width: 100%; display: block; }
 .mv-mono { font-family: var(--mv-font-mono); }
 
 /* Signature detail: the petal pill behind ONE word per headline, never more. */
-.mv-mark { background: var(--mv-petal); color: var(--mv-title-on-light); border-radius: var(--mv-radius-pill);
+/* Default: a petal underline. It cannot collide with the line above, and a marked word that starts
+   a line needs no correction — both of which the pill had to have tuned out of it. */
+.mv-mark { color: var(--mv-title-on-light); text-decoration: underline;
+  text-decoration-color: var(--mv-petal); text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.08em; text-decoration-skip-ink: none; }
+/* The enclosed pill, kept for the wordmark: a logo needs a shape, not an underline. Drawn with
+   box-shadow rather than horizontal padding so it never shifts the text it sits behind. */
+.mv-mark--pill { background: var(--mv-petal); border-radius: var(--mv-radius-pill); text-decoration: none;
   padding: 0.04em 0; box-shadow: -0.16em 0 0 var(--mv-petal), 0.16em 0 0 var(--mv-petal);
   box-decoration-break: clone; -webkit-box-decoration-break: clone; }
-.mv-mark--solid { background: var(--mv-primary); color: var(--mv-on-primary); }
+.mv-mark--solid { background: var(--mv-primary); color: var(--mv-on-primary); border-radius: var(--mv-radius-pill);
+  text-decoration: none; padding: 0.04em 0; box-shadow: -0.16em 0 0 var(--mv-primary), 0.16em 0 0 var(--mv-primary);
+  box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 /* Text-only variant: the signature idea without a second pill in view. For one word inside running
    copy — her middle name — where a pill would shout and bold Nunito is banned (see Type > Don't). */
-.mv-mark--text { background: none; box-shadow: none; padding: 0; color: var(--mv-link); }
+.mv-mark--text { background: none; box-shadow: none; padding: 0; text-decoration: none; color: var(--mv-link); }
 
 /* ---- Bands and layout ---- */
 .mv-band-light { background: var(--mv-field-light); color: var(--mv-title-on-light); }
@@ -62,7 +71,7 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; justify-content: space-between; gap: var(--mv-space-lg);
   background: var(--mv-field-light); color: var(--mv-title-on-light); border-bottom: 1px solid var(--mv-line-light); }
 .mv-nav .mv-logo { font: var(--mv-fw-h4) var(--mv-fs-h4)/1 var(--mv-font-head); color: inherit; text-decoration: none; white-space: nowrap; }
-.mv-nav .mv-logo .mv-mark { padding: 0.04em 0.3em; }
+.mv-nav .mv-logo .mv-mark--pill { box-shadow: -0.3em 0 0 var(--mv-petal), 0.3em 0 0 var(--mv-petal); }  /* a wordmark wants a rounder pill than a headline word */
 .mv-nav .mv-links { display: flex; gap: var(--mv-space-lg); align-items: center; }
 .mv-nav .mv-links a { color: var(--mv-body-on-light); text-decoration: none; font-family: var(--mv-font-head); font-size: var(--mv-fs-small); font-weight: var(--mv-fw-h3); white-space: nowrap; transition: color var(--mv-motion-fast) var(--mv-motion-ease); }
 .mv-nav .mv-links a:hover { color: var(--mv-link); }

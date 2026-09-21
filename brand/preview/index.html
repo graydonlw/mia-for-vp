@@ -19,12 +19,12 @@
 .spaces{display:flex;gap:var(--mv-space-md);align-items:flex-end;flex-wrap:wrap;margin-top:var(--mv-space-md)}.spaces div{background:var(--mv-primary);opacity:.65}
 section{scroll-margin-top:var(--mv-nav-height)}
 </style></head><body>
-<nav class="mv-nav"><a class="mv-logo" href="#">Mia for <span class="mv-mark">VP</span></a><div class="mv-links"><a href="#color">Color</a><a href="#type">Type</a><a href="#space">Space</a><a href="#buttons">Buttons</a><a href="#cards">Cards</a><a href="#about">Photo</a><a href="#forms">Forms</a></div><a class="mv-btn mv-btn--primary mv-btn--sm" href="#vote">Vote Mia</a></nav>
+<nav class="mv-nav"><a class="mv-logo" href="#">Mia for <span class="mv-mark mv-mark--pill">VP</span></a><div class="mv-links"><a href="#color">Color</a><a href="#type">Type</a><a href="#space">Space</a><a href="#buttons">Buttons</a><a href="#cards">Cards</a><a href="#about">Photo</a><a href="#forms">Forms</a></div><a class="mv-btn mv-btn--primary mv-btn--sm" href="#vote">Vote Mia</a></nav>
 
 <section class="mv-hero mv-has-blobs"><div class="mv-blob" aria-hidden="true" style="width:380px;height:380px;left:-140px;bottom:-180px"></div><div class="mv-blob" aria-hidden="true" style="width:90px;height:90px;right:18%;top:12%"></div>
 <div class="mv-inner"><p class="mv-badge">Vice President · CCA</p>
 <h1 class="mv-display" style="margin-top:var(--mv-space-md)">Every token and <span class="mv-mark">component</span>, on one page.</h1>
-<p class="mv-sub">If it looks wrong here, it is wrong in tokens.json or the component CSS. Fix it there, rebuild, reload. The signature detail is the petal pill — one word per headline, never two.</p>
+<p class="mv-sub">If it looks wrong here, it is wrong in tokens.json or the component CSS. Fix it there, rebuild, reload. The signature detail is the petal mark — an underline on one word per headline, never two; the enclosed pill is the wordmark's alone.</p>
 <div class="mv-btns"><a class="mv-btn mv-btn--primary" href="#">See the platform</a><a class="mv-btn mv-btn--secondary" href="#">Meet Mia</a></div></div></section>
 
 <section class="mv-band-tint" id="color"><div class="mv-container"><p class="mv-overline">Brand palette</p><div class="sws" id="sw-brand"></div>
@@ -90,14 +90,14 @@ section{scroll-margin-top:var(--mv-nav-height)}
 <div class="mv-field"><label class="mv-label" for="f5">What should Mia fix first?</label><textarea class="mv-textarea" id="f5" rows="3" placeholder="Tell her anything."></textarea></div>
 <label class="mv-check"><input type="checkbox" checked> Remind me to vote</label>
 <div class="mv-row"><button class="mv-btn mv-btn--primary">Send it</button> <button class="mv-btn mv-btn--ghost">Cancel</button></div></div></div>
-<div class="mv-dd-grid"><div class="mv-dd"><span class="mv-badge mv-badge--success">Do</span><p><b>One petal pill per headline.</b></p><p>The mark means "this is the word that matters". Two marks means neither does.</p></div>
+<div class="mv-dd-grid"><div class="mv-dd"><span class="mv-badge mv-badge--success">Do</span><p><b>One petal mark per headline.</b></p><p>The mark means "this is the word that matters". Two marks means neither does.</p></div>
 <div class="mv-dd"><span class="mv-badge mv-badge--danger">Don't</span><p><b>Set text on petal, mid-rose or a tint.</b></p><p>Only <code class="mv-mono">petal-ink</code> and <code class="mv-mono">title-on-light</code> are legible on petal; everything else fails AA.</p></div></div>
 <div class="mv-empty" style="margin-top:var(--mv-space-xl)">Empty state: nothing here yet. <a class="mv-link" href="#">Add the first item</a></div>
 <div class="mv-skeleton" style="margin-top:var(--mv-space-md);height:48px;max-width:420px"></div>
 </div></section>
 
 <footer class="mv-footer"><div style="max-width:var(--mv-container);margin:0 auto">
-<p class="mv-h4">Mia for <span class="mv-mark">VP</span></p>
+<p class="mv-h4">Mia for <span class="mv-mark mv-mark--pill">VP</span></p>
 <p class="mv-body" style="margin-top:var(--mv-space-sm)">The plum field is the footer and nothing else. Links here use <a href="#">link-on-dark</a>, because the rose link fails against plum at 2.5:1.</p>
 <div class="mv-row" style="margin-top:var(--mv-space-lg)"><a class="mv-btn mv-btn--primary" href="#">Vote Mia</a><a class="mv-btn mv-btn--secondary" href="#">Secondary on dark</a></div>
 <div class="mv-footnote"><span>Mia for VP · Calvary Chapel Academy</span><span>Design system preview</span></div></div></footer>
