@@ -1,6 +1,6 @@
 # Still needed from Mia
 
-Live at **https://voteformia.vercel.app** — every push to `main` redeploys it.
+Live at **https://mia-for-vp.vercel.app** — every push to `main` redeploys it.
 
 Everything below is placeholder copy sitting in `index.html`, marked
 `[in brackets]` on the page, per `AGENTS.md` rule 6 and `brand/DESIGN.md`
