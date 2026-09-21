@@ -22,11 +22,11 @@ window.BRAND_TOKENS = {
       },
       "mid-rose": {
         "value": "#E58CAF",
-        "job": "mid tone for charts, illustration and dividers, and the field of the sticky nav bar; never a text color"
+        "job": "mid tone for charts, illustration and dividers; never a text color"
       },
       "petal": {
         "value": "#F3C6DA",
-        "job": "the signature pill behind a headline word, badges, the photo arch, icon tiles"
+        "job": "the mark under a headline word, the field of the sticky nav bar, badges, the photo arch, icon tiles"
       },
       "blush": {
         "value": "#FBE7F0",

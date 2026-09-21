@@ -395,9 +395,10 @@ field behind body copy · introduce a second accent hue "for variety" · reach f
 Generated with `python3 scripts/contrast.py brand/` on 2026-09-20. The script pairs every text role
 against every field, including combinations this brand never produces (a link inside the footer's
 panel fill, say). The rows below are the pairs that **can** occur:
-Mid-rose is a brand tone rather than a field role, so `contrast.py` does not pair it; the three nav
-rows were measured by hand on 2026-09-21. The two failing pairs are listed **because they are the
-ones the nav must avoid** — they are why its ink is plum.
+Petal is a brand tone rather than a field role, so `contrast.py` does not pair it against text
+roles; the four nav rows were measured by hand on 2026-09-21. The failing row is listed **because
+it is the one the nav must avoid**: white was the wordmark ink while the bar was mid-rose, and it
+does not survive the move to petal.
 
 | Text | on Field | Ratio | AA normal (4.5) | AA large (3.0) |
 |---|---|---|---|---|
@@ -405,9 +406,10 @@ ones the nav must avoid** — they are why its ink is plum.
 | title-on-light `#3B1D2B` | white `#FFFFFF` | 15.04 | Pass | Pass |
 | title-on-light `#3B1D2B` | field-light `#FFF9FB` | 14.46 | Pass | Pass |
 | title-on-light `#3B1D2B` | field-tint `#FBE7F0` | 12.74 | Pass | Pass |
-| title-on-light `#3B1D2B` | mid-rose `#E58CAF` (nav bar) | 6.23 | Pass | Pass |
-| body-on-light `#6B4A58` | mid-rose `#E58CAF` (nav bar) | 3.17 | **Fail** | Pass |
-| link `#992D56` | mid-rose `#E58CAF` (nav bar) | 3.04 | **Fail** | Pass |
+| title-on-light `#3B1D2B` | petal `#F3C6DA` (nav bar) | 9.95 | Pass | Pass |
+| petal-ink `#992D56` | petal `#F3C6DA` (nav bar, "VP") | 4.85 | Pass | Pass |
+| body-on-light `#6B4A58` | petal `#F3C6DA` | 5.06 | Pass | Pass |
+| white `#FFFFFF` | petal `#F3C6DA` | 1.51 | **Fail** | **Fail** |
 | title-on-light `#3B1D2B` | gray-2 `#EBD3DE` | 10.67 | Pass | Pass |
 | link-on-dark `#F3C6DA` | field-dark `#3B1D2B` | 9.95 | Pass | Pass |
 | title-on-light `#3B1D2B` | petal `#F3C6DA` | 9.95 | Pass | Pass |
@@ -654,18 +656,23 @@ wordmark. `h2` runs at 1.25 leading to give a marked line room.
 
 ### Nav — `.mv-nav`
 
-Sticky, 72px tall (56px below 820px, where the button grows to the 44px thumb target), **mid-rose
+Sticky, 72px tall (56px below 820px, where the button grows to the 44px thumb target), **petal
 field**, 1px `plum-20` bottom border, wordmark left, links + one button right.
 
-The bar is the one place mid-rose is used as a field, and the ink on it is **plum, not
-`body-on-light`** — body-on-light measures 3.17:1 on mid-rose and fails AA, where plum is 6.23:1.
-Same reason the button is a plum outline rather than the usual `link`-coloured one: rose-deep on
-mid-rose is 3.04:1. Links are `small` at weight 600. **Hover adds a `plum-60` underline instead of
-recolouring the text**, so the ink never drops below its measured ratio in any state; `aria-current`
-is the same underline in full plum, 2px at 6px offset. The wordmark is **plum "Mia for" + white "VP"**, no enclosure. White measures 2.41:1 here, which
-the WCAG logotype exception allows and which nothing else on the bar depends on; every other piece
-of text is plum. A petal or blush field was rejected earlier for swallowing the pill, and the pill
-then went anyway.
+**The bar is the same petal as the mark under a headline word** — Graydon asked for it by pointing
+at the underline beneath "Grace". That tie is the reason for the colour; the bar and the signature
+detail are one note, not two.
+
+Ink on it is **plum, not `body-on-light`** — body-on-light is 5.06:1 on petal and would pass, but
+plum at 9.95:1 is what keeps the bar reading as ink-on-paper rather than a tinted panel. The button
+is a plum outline for the same reason. Links are `small` at weight 600. **Hover adds a `plum-60`
+underline instead of recolouring the text**, so the ink never drops below its measured ratio in any
+state; `aria-current` is the same underline in full plum, 2px at 6px offset.
+
+The wordmark is **plum "Mia for" + "VP" in `petal-ink`** (#992D56, 4.85:1), the token the kit
+reserves for text sitting on a petal fill. No enclosure. White is 1.51:1 here and cannot be used —
+it worked only while the bar was mid-rose.
+
 **Below 820px every link except the button hides** — the sticky bar carries the ask instead.
 Focus ring: 2px `plum`, 4px offset.
 
@@ -985,3 +992,4 @@ An agent about to ship a screen should be able to check it against this list alo
 | 2026-09-21 | **Nav field changed shell → mid-rose.** Graydon pointed at the primary button and asked for the bar in that colour; rose measured 4.67:1 for white ink and only 3.09:1 for the petal hover, so the lighter tone he asked for next is the one that shipped. Petal and blush were both rejected on sight: the wordmark's petal pill vanishes into them. Nav ink is now plum throughout, and hover moves the colour into an underline rather than recolouring the text. |
 | 2026-09-21 | QR collateral added: `brand/assets/qr/` (SVG, SVG-on-shell, 1640px PNG) at error-correction level H, plus `brand/preview/qr.html`, a print-to-PDF sheet with a 60mm poster code and eight 30mm cut-outs. Decode-tested down to 150px; fails at 90px, which sets the print floor. |
 | 2026-09-21 | Wordmark de-enclosed: "VP" is now white ink on the mid-rose bar, no pill, chosen by Graydon from four drawn on the real bar (no mark / white pill / plum underline / white ink). `.mv-mark--pill` is now unused and held in the kit rather than cut. |
+| 2026-09-21 | Nav field mid-rose → **petal**, matching the mark under "Grace" — Graydon asked for the bar in that colour after seeing four brighter, more saturated candidates drawn on the real bar (sat 85/100%, and two off-hue). The wordmark's "VP" moved white → `petal-ink`, because white is 1.51:1 on petal. Mid-rose's nav job reverted; petal's token job now names the bar. |
