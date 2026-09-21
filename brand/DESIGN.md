@@ -10,7 +10,7 @@ colors:
   rose-deep: "#992D56"
   mid-rose: "#E58CAF"
   petal: "#F3C6DA"
-  petal-light: "#F5D1E1"
+  petal-light: "#FBEEF4"
   blush: "#FBE7F0"
   shell: "#FFF9FB"
   white: "#FFFFFF"
@@ -310,7 +310,7 @@ One accent. Most of the page is field; the only saturated color is the one you p
 |---|---|---|
 | shell | `#FFF9FB` | The default page field. A pink-white, so the page reads warm rather than clinical. |
 | blush | `#FBE7F0` | Alternating band field, decorative circles, soft cards. |
-| petal-light | `#F5D1E1` | The sticky nav bar. One step lighter than petal on the same hue (`hsl(333, 65%, 89%)` against petal's 86%); added 2026-09-21 because the bar wanted to sit between petal and blush. |
+| petal-light | `#FBEEF4` | The sticky nav bar, and nothing else. A near-white tint on petal's hue (`hsl(333, 65%, 96%)`). Added 2026-09-21 and lightened three times in the same sitting; **its value is expected to move, its job is not.** |
 | petal | `#F3C6DA` | The signature mark — the underline under a headline word — plus badges, the photo arch, icon tiles. |
 | mid-rose | `#E58CAF` | Mid tone for charts, illustration and dividers. **Never a text color and never a text field.** |
 | rose | `#BE4C78` | The interactive color: primary buttons, focus ring, first chart series. |
@@ -408,11 +408,11 @@ mid-rose, and it does not survive the move into the petal family.
 | title-on-light `#3B1D2B` | white `#FFFFFF` | 15.04 | Pass | Pass |
 | title-on-light `#3B1D2B` | field-light `#FFF9FB` | 14.46 | Pass | Pass |
 | title-on-light `#3B1D2B` | field-tint `#FBE7F0` | 12.74 | Pass | Pass |
-| title-on-light `#3B1D2B` | petal-light `#F5D1E1` (nav bar) | 10.80 | Pass | Pass |
-| petal-ink `#992D56` | petal-light `#F5D1E1` (nav bar, "VP") | 5.27 | Pass | Pass |
+| title-on-light `#3B1D2B` | petal-light `#FBEEF4` (nav bar) | 13.35 | Pass | Pass |
+| petal-ink `#992D56` | petal-light `#FBEEF4` (nav bar, "VP") | 6.51 | Pass | Pass |
 | title-on-light `#3B1D2B` | petal `#F3C6DA` | 9.95 | Pass | Pass |
 | petal-ink `#992D56` | petal `#F3C6DA` | 4.85 | Pass | Pass |
-| white `#FFFFFF` | petal-light `#F5D1E1` | 1.62 | **Fail** | **Fail** |
+| white `#FFFFFF` | petal-light `#FBEEF4` | 1.08 | **Fail** | **Fail** |
 | title-on-light `#3B1D2B` | gray-2 `#EBD3DE` | 10.67 | Pass | Pass |
 | link-on-dark `#F3C6DA` | field-dark `#3B1D2B` | 9.95 | Pass | Pass |
 | title-on-light `#3B1D2B` | petal `#F3C6DA` | 9.95 | Pass | Pass |
@@ -662,20 +662,25 @@ wordmark. `h2` runs at 1.25 leading to give a marked line room.
 Sticky, 72px tall (56px below 820px, where the button grows to the 44px thumb target),
 **petal-light field**, 1px `plum-20` bottom border, wordmark left, links + one button right.
 
-**The bar is a lighter step off the mark under a headline word.** Graydon picked it by pointing at
-the underline beneath "Grace" and then asking for one shade lighter; `petal-light` is that step,
-same hue, lightness 86% → 89%. It exists for this bar and nothing else. Blush was tried in between
-and rejected — at 95% it is nearly the page field, and it is already the alternating band colour,
-so the bar stopped reading as a bar.
+**The bar is a near-white tint on the hue of the mark under a headline word.** Graydon picked the
+colour by pointing at the underline beneath "Grace", then asked for lighter three times running;
+the landing point is `hsl(333, 65%, 96%)`, against petal's 86%. It exists for this bar and nothing
+else.
 
-Ink on it is **plum, not `body-on-light`** — body-on-light would pass at 5.5:1, but plum at 10.80:1
-is what keeps the bar reading as ink-on-paper rather than a tinted panel. The button is a plum
-outline for the same reason. Links are `small` at weight 600. **Hover adds a `plum-60`
+**The 1px `plum-20` rule is load-bearing at this lightness.** The tint separates from the shell
+page by only **1.08:1**, so the rule is most of what marks the bar — do not remove it as
+decoration. One step further (the page colour itself, 1.00:1) was drawn and rejected, and blush was
+rejected on the way past: it is already the alternating band field, so the bar matched two of the
+four sections.
+
+Ink on it is **plum, not `body-on-light`** — body-on-light would pass comfortably here, but plum at
+13.35:1 is what keeps the bar reading as ink-on-paper rather than a tinted panel. The button is a
+plum outline for the same reason. Links are `small` at weight 600. **Hover adds a `plum-60`
 underline instead of recolouring the text**, so the ink never drops below its measured ratio in any
 state; `aria-current` is the same underline in full plum, 2px at 6px offset.
 
-The wordmark is **plum "Mia for" + "VP" in `petal-ink`** (#992D56, 5.27:1), the token the kit
-reserves for text sitting on a petal fill. No enclosure. White is 1.62:1 here and cannot be used —
+The wordmark is **plum "Mia for" + "VP" in `petal-ink`** (#992D56, 6.51:1), the token the kit
+reserves for text sitting on a petal fill. No enclosure. White is 1.08:1 here and cannot be used —
 it worked only while the bar was mid-rose.
 
 **Below 820px every link except the button hides** — the sticky bar carries the ask instead.
@@ -999,3 +1004,4 @@ An agent about to ship a screen should be able to check it against this list alo
 | 2026-09-21 | Wordmark de-enclosed: "VP" is now white ink on the mid-rose bar, no pill, chosen by Graydon from four drawn on the real bar (no mark / white pill / plum underline / white ink). `.mv-mark--pill` is now unused and held in the kit rather than cut. |
 | 2026-09-21 | Nav field mid-rose → **petal**, matching the mark under "Grace" — Graydon asked for the bar in that colour after seeing four brighter, more saturated candidates drawn on the real bar (sat 85/100%, and two off-hue). The wordmark's "VP" moved white → `petal-ink`, because white is 1.51:1 on petal. Mid-rose's nav job reverted; petal's token job now names the bar. |
 | 2026-09-21 | **New token `brand.petal-light` #F5D1E1**, and the nav field moved petal → petal-light. Graydon asked for one shade lighter than petal; the gap between petal (L 86%) and blush (L 95%) had nothing in it, so the step was generated on petal's own hue at L 89% rather than reaching for an existing colour that was the wrong one. Blush was tried in that slot first and rejected: it is the alternating band field, and at 1.14:1 against shell the bar stopped separating from the page. Palette is now 44 colours. |
+| 2026-09-21 | `petal-light` lightened #F5D1E1 → #FBEEF4 (L 89% → 96%) across three "lighter" passes in one sitting. A ladder was drawn on the real bar — 92%, 94%, 96%, and the page colour itself — and Graydon landed on 96%. **At 1.08:1 against the page, the 1px `plum-20` rule is now load-bearing rather than decorative**, which is recorded in § Nav. The token's value moved; its job did not, and the palette stayed at 44 colours rather than growing one per step. |
