@@ -26,7 +26,11 @@ window.BRAND_TOKENS = {
       },
       "petal": {
         "value": "#F3C6DA",
-        "job": "the mark under a headline word, the field of the sticky nav bar, badges, the photo arch, icon tiles"
+        "job": "the mark under a headline word, badges, the photo arch, icon tiles"
+      },
+      "petal-light": {
+        "value": "#F5D1E1",
+        "job": "the field of the sticky nav bar; one step lighter than petal, same hue"
       },
       "blush": {
         "value": "#FBE7F0",

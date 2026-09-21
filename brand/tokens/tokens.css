@@ -7,7 +7,8 @@
   --mv-rose: #BE4C78;  /* the interactive color: primary buttons, links, focus ring, first chart series */
   --mv-rose-deep: #992D56;  /* links, hover fill, focus ring, and text on petal or blush fills */
   --mv-mid-rose: #E58CAF;  /* mid tone for charts, illustration and dividers; never a text color */
-  --mv-petal: #F3C6DA;  /* the mark under a headline word, the field of the sticky nav bar, badges, the photo arch, icon tiles */
+  --mv-petal: #F3C6DA;  /* the mark under a headline word, badges, the photo arch, icon tiles */
+  --mv-petal-light: #F5D1E1;  /* the field of the sticky nav bar; one step lighter than petal, same hue */
   --mv-blush: #FBE7F0;  /* alternating band field, decorative circles, soft card fill */
   --mv-shell: #FFF9FB;  /* the default page field; a pink-white, so the page reads warm rather than clinical */
   /* Neutral ramp */
