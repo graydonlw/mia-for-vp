@@ -664,6 +664,14 @@ Padding 96px top and bottom, display headline capped at 14ch, `.mv-sub` lede at 
 below. At most one decorative device: two blobs **or** one portrait, never both. There is **no dark
 hero** in this brand — a plum hero would make the page a poster, and the one idea says person.
 
+**The hero portrait on a phone is conditional.** Beside the copy on a wide screen it is 340px; below
+821 it moves above the headline at 124px — but only when `min-width: 361px` **and**
+`min-height: 800px`. It costs ~171px of vertical, and the hero has one screen to hold a face, a
+slogan, a byline and two buttons above the sticky bar. Measured: 375×812 lands at exactly 696px of
+hero against 696px of usable screen, 430×932 has 140px to spare, while 360×740 needs 738 and has 624
+— there the buttons end up *under* the bar, so the portrait goes and the face is traded for the ask.
+Both conditions are load-bearing; a width query alone passes 360×740 and breaks it.
+
 **The hero reads headline → sub → byline → buttons.** The office and the school are *not* an eyebrow
 above the headline: a pill there is 466px of pink over the one line you want read, and it puts a
 second pill in view competing with `.mv-mark`. They go in `.mv-hero-byline` under the sub — a 3px
@@ -954,6 +962,7 @@ An agent about to ship a screen should be able to check it against this list alo
 | 2026-09-21 | Byline up from `small` to `body`, school from `muted` to `body-on-light`, rule 2px → 3px. The size bump broke the one-line letterhead between 821 and ~1000px, so the school now falls to its own row on the rule's right end instead of jumping left. |
 | 2026-09-21 | `.mv-mark` redrawn with `box-shadow` instead of horizontal padding, so a marked word that starts a line aligns with the line above it; h2 leading 1.15 → 1.25 to clear the pill; new `.mv-mark--text` variant, used on "Grace" in the hero sub to tie her middle name to the slogan. |
 | 2026-09-21 | **Signature changed: the mark is now a petal underline, not a pill** (Graydon, chosen from five treatments drawn on the real headlines). The enclosed pill survives as `.mv-mark--pill` on the wordmark only — an underlined logo reads as underlined text. |
+| 2026-09-21 | Hero portrait now leads on a phone (124px arch above the headline), gated on `min-width: 361px and min-height: 800px` so it never pushes the buttons under the sticky bar. Phone hero spacing tightened to pay for it. |
 | 2026-09-20 | Palette shifted pinker on request: cream/dusty-rose fields replaced by shell/blush/petal, accent and ink both replaced (old values now in the retired list). 20 hexes retired, including Calvary Chapel Academy's own blue and cream, which are retired deliberately. |
 | 2026-09-20 | Caveat (handwriting accent) parked rather than adopted; conditions for adopting it recorded in § Typography. |
 | 2026-09-20 | Phone pass. Tokens `nav-height-sm` (56px) and `bar-height` (60px) added; body pads under the sticky bar; `.mv-card--row` / `.mv-card--kv` phone rows; `.mv-two-col .mv-media` leads when stacked; display gets a 13vw phone clamp; headings `text-wrap: balance`; `.mv-snap` sections drop `scroll-margin-top` (it doubled the nav offset on anchor jumps); `.mv-md-hide` utility. |

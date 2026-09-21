@@ -110,7 +110,19 @@ img { max-width: 100%; display: block; }
 /* Hero with a portrait beside the copy. Below 821 the arch is removed rather than
    shrunk: a phone hero is one thumb-length and a photo would cost the whole fold. */
 .mv-hero-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: var(--mv-space-2xl); align-items: center; }
-@media (max-width: 820px) { .mv-hero-split { grid-template-columns: minmax(0, 1fr); gap: 0; } }
+/* On a phone the hero is one column and the portrait is opt-in, not opt-out: it costs ~171px, and
+   the hero has exactly one screen to hold a face, a slogan and two buttons above the sticky bar.
+   It appears only where the screen can pay — measured, not guessed: 375x812 lands at exactly 696px
+   of hero against 696px of usable screen, while 360x740 needs 738 and has 624. */
+@media (max-width: 820px) { .mv-hero-split { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .mv-hero-split .mv-media { display: none; } }
+@media (max-width: 820px) and (min-width: 361px) and (min-height: 800px) {
+  .mv-hero-split .mv-media { display: flex; order: -1; margin-bottom: var(--mv-space-md); } }
+@media (max-width: 820px) { .mv-hero .mv-inner { padding-block: var(--mv-space-lg); }
+  .mv-hero .mv-sub { margin-top: var(--mv-space-lg); }
+  .mv-hero .mv-hero-byline { margin-top: var(--mv-space-md); }
+  .mv-hero .mv-btns { margin-top: var(--mv-space-lg); } }
+
 
 /* ---- Buttons: 8 states. .is-* classes let the preview force a state. ---- */
 .mv-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--mv-space-xs); position: relative;

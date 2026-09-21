@@ -29,9 +29,10 @@
   #draft-banner{align-items:center}
   #draft-banner b{display:inline;margin:0 var(--mv-space-xs) 0 0}
   /* Page composition: the About portrait is 320 wide beside the text, 220 above it on a phone. */
+  #top .mv-photo-frame{width:min(340px,100%)}
   #about .mv-photo-frame{width:min(320px,100%)}
   #vote .mv-cta{margin-top:var(--mv-space-xl)}
-  @media (max-width:820px){ #about .mv-photo-frame{width:min(220px,100%)} }
+  @media (max-width:820px){ #about .mv-photo-frame{width:min(220px,100%)} #top .mv-photo-frame{width:min(124px,36vw)} }
   @media (max-width:640px){ #vote .mv-cta{margin-top:var(--mv-space-lg)} }
 </style>
 </head>
@@ -79,12 +80,12 @@
       <a class="mv-btn mv-btn--secondary" href="#vote">How to vote</a>
     </div>
    </div>
-   <div class="mv-media mv-md-hide">
-    <div class="mv-photo-frame" style="width:min(340px,100%)">
+   <div class="mv-media">
+    <div class="mv-photo-frame">
       <div class="mv-photo">
         <img src="brand/assets/mia-portrait-1-480.webp"
              srcset="brand/assets/mia-portrait-1-480.webp 480w, brand/assets/mia-portrait-1-960.webp 960w"
-             sizes="(max-width: 820px) 1px, 340px" width="480" height="719" decoding="async"
+             sizes="(max-width: 820px) 124px, 340px" width="480" height="719" decoding="async"
              alt="Mia Webster, smiling, outdoors at sunset">
       </div>
     </div>
