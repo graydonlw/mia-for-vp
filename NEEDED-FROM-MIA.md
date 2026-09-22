@@ -1,80 +1,86 @@
 # Still needed from Mia
 
-Live at **https://mia-for-vp.vercel.app** — every push to `main` redeploys it.
+Live at **https://mia-for-vp.vercel.app**. Every push to `main` redeploys it.
 
-Everything below is placeholder copy sitting in `index.html`, marked
-`[in brackets]` on the page, per `AGENTS.md` rule 6 and `brand/DESIGN.md`
-Don't #9: no invented promises, quotes, numbers or dates. Tick these off as
-they come in.
+**Nothing is outstanding from Mia.** She answered the form on 2026-09-22 and
+every blocking item below is closed. What is left is Graydon's, and it is one
+physical check.
 
-## How the answers are coming back (2026-09-21)
+## How the answers came back (2026-09-22)
 
-A Google Form was sent to Mia (miagracew8@gmail.com) on 2026-09-21 covering
-every open item below.
+A Google Form was sent to Mia (miagracew8@gmail.com) on 2026-09-21. She
+submitted it **2026-09-22 10:04 AST**, and supplied a photo of a handwritten
+note giving the concrete mechanism behind each of the three promises.
 
 - **Form:** https://docs.google.com/forms/d/e/1FAIpQLSdMnv-fsg5GE329k5JPGCbjT3U2RD_0C_E-0cDmMShSq3IcvA/viewform
 - **Responses land in Drive sheet** `1L2EQedcdKGk5QhGM50GN84ARakxgTENL91Ii1Muj-KE`
-  ("Mia for VP — what the site still needs (Responses)").
+  ("Mia for VP: what the site still needs (Responses)").
 
 **No agent is notified when she submits.** Nothing pushes; the sheet has to be
-read on request. To pick this up: read that sheet via the Drive connector, then
-fill in the items below. The form is set to *anyone with the link*.
+read on request. If she submits again, read that sheet via the Drive connector.
 
-## Blocking a real launch
+Her exact answers, so nobody has to re-open the sheet:
 
-These three are the difference between a draft and something you can put a QR
-code on.
+| Question | Her answer |
+|---|---|
+| Election date | `2026-09-29` (a Tuesday) |
+| Promise 1 | "You ask, We listen" · *suggestion box* |
+| Promise 2 | "Make School More Fun" · *lunch surprise* |
+| Promise 3 | "Celebrate Fellow Students" · *morning announcements, different students; student of the month* |
+| Office | Yes, Vice President |
+| How voting works | "6th-12th grade votes; votes in homeroom; fill in the ballot" |
+| Instagram | none |
+| Slogan "Lead with Grace" | keep |
+| "I won't go M.I.A." line | keep |
+| Anything else to change | "nothing" |
 
-- [ ] **Election date.** Set `ELECTION_DATE` in the config block at the bottom of
-      `index.html` (format `"2026-10-08"`). It fills the date into the hero
-      countdown, the How to vote cards, the CTA, the footer, and the page title.
-      One edit, five places.
-- [ ] **The three promises.** Specific and checkable, in her words. "A vending
-      machine in the north hall by November" beats "more school spirit." Goes in
-      `#platform`.
-- [x] ~~**A photo.**~~ Done 2026-09-21 — three supplied and wired in: the hero
+The italics are from her handwritten note, not the form. The form gave the
+three headlines; the note gave what each one actually is. The site uses the
+headline as the card title and the mechanism as the card body.
+
+## Closed
+
+- [x] ~~**Election date.**~~ Done 2026-09-22. `ELECTION_DATE = "2026-09-29"`.
+      Fills the hero countdown, the How to vote card, the CTA, the footer and
+      the page title.
+- [x] ~~**The three promises.**~~ Done 2026-09-22, in `#platform`, her words.
+- [x] ~~**A photo.**~~ Done 2026-09-21. Three supplied and wired in: the hero
       arch, the About arch, and the round portrait in the vote CTA. `og:image`
       is set, so link previews are no longer blank.
+- [x] ~~**Voting logistics.**~~ Done 2026-09-22, in the three `#vote` cards.
+- [x] ~~**Campaign Instagram.**~~ Closed 2026-09-22. She has none. `INSTAGRAM`
+      stays `null` and both links stay hidden. Set a URL if that ever changes.
+- [x] ~~**Confirm the office is Vice President.**~~ Confirmed 2026-09-22.
+- [x] ~~Delete `<div id="draft-banner">`.~~ Done 2026-09-22.
+- [x] ~~Delete every element with `class="todo"`.~~ Done 2026-09-22.
+- [x] ~~Search the file for `[` and make sure no bracketed placeholder
+      survived.~~ Done 2026-09-22. The only `[` left are the `[hidden]` CSS
+      selector and JS array indexing.
 
-## Needed, but the page survives without them
+## Left, and it is Graydon's
 
-- [ ] **Voting logistics** — the room or period, which grades vote, whether
-      students need anything with them. Goes in the three `#vote` cards.
-
-## Optional
-
-- [ ] **Campaign Instagram.** If she has one, set `INSTAGRAM` in the config
-      block and the links turn on by themselves. If not, leave it `null` and
-      they stay hidden.
-- [ ] **Confirm the office is Vice President.** The whole site says VP because
-      the brand kit did. Nobody has actually confirmed it.
-
-## Before it goes public
-
-- [ ] Delete `<div id="draft-banner">` at the top of `index.html`.
-- [ ] Delete every element with `class="todo"`. Those are the grey notes-to-self
-      under each section.
-- [ ] Search the file for `[` and make sure no bracketed placeholder survived.
-- [ ] Scan the QR code on a real phone before printing any of them. The codes
-      live in `brand/assets/qr/` and the printable sheet is
-      `brand/preview/qr.html` — open it and print to PDF. It decodes in software
-      down to 150px, but a real camera is the only test that counts.
+- [ ] **Scan the QR code on a real phone before printing any of them.** The
+      codes live in `brand/assets/qr/` and the printable sheet is
+      `brand/preview/qr.html`. Open it and print to PDF. It decodes in
+      software down to 150px, but a real camera is the only test that counts.
+      **The election is 2026-09-29.** If posters are part of the plan, this is
+      the long pole.
 - [ ] **Re-generate the QR codes if the URL ever changes.** They are pointed at
       `https://mia-for-vp.vercel.app`. A custom domain, or anything else that
       moves the site, makes every printed code dead paper.
-- [ ] Record the pass in `PROJECT_TRACKER.md` (§2, §6, §10, §11). The tracker is
-      a symlink into the local vault and is gitignored, so it cannot be updated
-      from the project thread — it has to happen on the machine that has it.
 
 ## Decisions already made, so nobody relitigates them
 
-- Slogan is **"Lead with Grace"**. "I won't go M.I.A." is kept as one line at the
-  end of the About section. Cut it if Mia doesn't like it.
-- The page is **four sections** — hero, platform, about, how to vote (2026-09-20).
+- Slogan is **"Lead with Grace"**, confirmed by Mia, 2026-09-22. "I won't go
+  M.I.A." stays as one line at the end of the About section; she confirmed keep.
+- The page is **four sections**: hero, platform, about, how to vote (2026-09-20).
   "The job", her letter, the quotes block and the feedback section were cut as
-  extra pages; the MVP in `PROJECT_TRACKER.md` §3 is hero + three platform cards
-  + about with photo + vote CTA. If feedback comes back, it goes through a
-  **Google Form**, not an on-page form: a public repo makes any form endpoint key
-  scrapeable.
+  extra pages. If feedback comes back, it goes through a **Google Form**, not an
+  on-page form: a public repo makes any form endpoint key scrapeable.
 - No phone numbers or personal email addresses on the page, and no other
   students' names or faces without a parent's okay.
+- **Promise copy is hers, not ours** (2026-09-22). The card bodies describe only
+  the mechanism she wrote down: a suggestion box, a lunch surprise, student of
+  the month, rotating announcement readers. No deadline, count or venue was
+  invented to make them sound more specific. If a promise needs a date on it,
+  ask her; do not supply one.
