@@ -765,6 +765,7 @@ Cards look identical on both light bands by design. **Do not add a shadow to lif
 card sideways there and do nothing above it: `.mv-card--row` keeps the icon tile on the left with
 title and copy beside it (the platform cards); `.mv-card--kv` makes the title a left-hand label
 beside its copy — "When", "Where", "Who can". Neither changes the card's fill or radius.
+A `--row` card with a title and no copy centres the title on the tile instead of top-aligning it.
 
 ### Photo — `.mv-photo`
 
