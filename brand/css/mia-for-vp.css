@@ -186,6 +186,7 @@ img { max-width: 100%; display: block; }
   .mv-card--row .mv-tile { grid-row: 1 / span 2; align-self: start; margin-bottom: 0; }
   .mv-card--row .mv-card-title { grid-column: 2; margin-bottom: 2px; }
   .mv-card--row p { grid-column: 2; }
+  .mv-card--row .mv-card-title:last-child { grid-row: 1 / span 2; align-self: center; margin-bottom: 0; } /* title-only row: centre it on the tile */
   .mv-card--kv { grid-template-columns: 5.5em minmax(0, 1fr); }
   .mv-card--kv .mv-card-title { margin-bottom: 0; }
 }

@@ -35,8 +35,9 @@ Her exact answers, so nobody has to re-open the sheet:
 | Anything else to change | "nothing" |
 
 The italics are from her handwritten note, not the form. The form gave the
-three headlines; the note gave what each one actually is. The site uses the
-headline as the card title and the mechanism as the card body.
+three headlines; the note gave what each one actually is. ~~The site uses the
+headline as the card title and the mechanism as the card body.~~ Superseded
+2026-09-25: the cards are headlines only (see Decisions).
 
 ## Closed
 
@@ -84,3 +85,7 @@ headline as the card title and the mechanism as the card body.
   the month, rotating announcement readers. No deadline, count or venue was
   invented to make them sound more specific. If a promise needs a date on it,
   ask her; do not supply one.
+- **Promise cards are headlines only** (Mia, 2026-09-25). She wanted "lunch
+  surprise" gone and offered dropping all three card bodies; Graydon chose
+  that. The form holds only the headlines, so there was no other detail to
+  swap in. Do not add descriptions back unless she supplies new wording.
